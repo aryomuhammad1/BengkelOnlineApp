@@ -1,0 +1,47 @@
+countdown pidah kebawah [no]
+daftar akun sebagai : - space button nya dikecilin, tambah icon
+form regis bengkel bagi dua
+size judul form regis samakan dengan "data pemilik bengkel"
+size sub judul form regis lebih kecil daripada "data pemilik bengkel"
+waktu jadiin 24 jam
+error text dibawah text field
+tambah alamat di form regis
+warna bintang rating bisa dibedain
+tambah kontak bengkel, di bawah waktu buka-tutup
+status bengkel berwujud badge/tag
+
+CARD LIHAT rute
+waktu tempuh (jarak)
+alamat
+
+Setelah Pesan montir
+Munculkan card dengan profil picture dan nama bengkel
+Munculkan estimasi waktu
+
+Tambahkan watsapp button setelah order (di pelanggan maupun di bengkel)
+
+INFO bengkel
+1. profil picture 6
+2. foto bengkel * 1 
+3. nama bengkel * 2
+4. bergabung di apliksai sejak 6
+5. rating general * 4 (4,5 ***** semua layanan)
+6. rating jemput di tempat 4 (4,5 ***** jemput di tempat)
+7. ulasan pelanggan 10 
+7. deskripsi 9
+8. ketersediaan montir *3
+8. alamat bengkel 7
+9. waktu buka-tutup 8
+10. status bengkel *3
+11. tombol rute * 5
+12. tombol pesan * 5
+13. tombol lihat selengkapnya * 5
+
+
+FLOW PENGENDARA MOTOR
+Login -> pilih bengkel -> lihat informasi bengkel -> pesan montir -> beri rating
+
+FLOW bengkel
+Login -> Aktifkan status -> Tunggu order -> Lihat notifikasi -> Terima order
+
+Login -> Lihat profil bengkel (informasi bengkel, rating) -> Ubah profil

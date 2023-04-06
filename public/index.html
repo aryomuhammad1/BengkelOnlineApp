@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00aa13" />
+    <title>Bengkel Online</title>
+    <script
+      src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"
+      defer
+    ></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"
+      defer
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="manifest" href="./manifest.json" />
+    <!-- <link rel="apple-touch-icon" href="./src/images/gear-icon-192x192.png" /> -->
+    <script src="./bundle.js" defer></script>
+    <!-- <script src="./src/js/sw-register.js" defer></script> -->
+    <!-- <script type="module" src="./firebase-messaging-sw.js" defer></script> -->
+    <!-- <script src="./index.bundle.js" defer></script> -->
+    <!-- <script src="./auth.bundle.js" defer></script> -->
+    <!-- <script src="./main.bundle.js" defer></script> -->
+    <!-- <script src="./main_bengkel.bundle.js" defer></script> -->
+  </head>
+  <body>
+    <svg class="star-template" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="null" x1="0" x2="100%" y1="0" y2="0">
+          <stop offset="50%" stop-color="#a5a5a5"></stop>
+        </linearGradient>
+      </defs>
+      <defs>
+        <linearGradient id="full" x1="0" x2="100%" y1="0" y2="0">
+          <stop offset="100%" stop-color="#fed94b"></stop>
+        </linearGradient>
+      </defs>
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="star">
+        <path
+          d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
+        />
+      </symbol>
+    </svg>
+    <!-- ===[OPENING]=== -->
+    <!-- <section class="container active">
+      <div class="card show-cost center-open">
+        <p class="show-cost-info show-cost--problem">
+          Masalah motor : <br />
+          <span
+            >ban depan bocor, aki habis ban depan bocor, aki habis habis ban
+            depan bocor, aki habis habis ban depan bocor, aki habis habis ban
+            depan bocor, aki habis habis ban depan bocor, aki habis
+          </span>
+        </p>
+        <p class="show-cost-info show-cost--cost">
+          Biaya : <br />
+          <span>Rp. 50.000</span>
+        </p>
+        <button class="btn btn-submit-form">Sudah dibayar</button>
+        <button class="btn btn-load" style="display: none">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+      </div>
+    </section> -->
+
+    <!-- <div class="card waiting-cost center-open">
+		  <h2>Montir sudah sampai!</h2>
+		  <p>
+          Menunggu hasil pengecekan motor <br />
+          dan biaya perbaikan
+        </p>
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div> -->
+
+    <section class="opening">
+      <div class="container opening-background">
+        <img src="./src/images/gear-icon-512x512.png" alt="gear-icon" />
+      </div>
+      <div class="opening-options">
+        <button class="btn btn-prim">Masuk</button>
+        <button class="btn btn-second">Belum punya akun? Daftar yuk!</button>
+        <button class="btn btn-install-app not-active">
+          <?xml version="1.0" encoding="utf-8"?>
+
+          <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+          <svg
+            height="800px"
+            width="800px"
+            version="1.1"
+            id="_x32_"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+          >
+            <g>
+              <path
+                class="st0"
+                d="M426.537,0H179.641c-22.243,0-40.376,18.175-40.376,40.401v129.603h25.221V69.106h277.206V424.46H164.485
+					v-83.887h-25.221v131.034c0,22.192,18.133,40.392,40.376,40.392h246.896c22.192,0,40.375-18.2,40.375-40.392v-129.03V40.401
+					C466.912,18.175,448.728,0,426.537,0z M303.08,478.495c-9.174,0-16.636-7.47-16.636-16.661c0-9.183,7.462-16.653,16.636-16.653
+					c9.158,0,16.686,7.47,16.686,16.653C319.766,471.025,312.247,478.495,303.08,478.495z"
+              />
+              <polygon
+                class="st0"
+                points="225.739,335.774 358.778,255.289 225.739,174.804 225.739,221.11 45.088,221.11 45.088,289.468 
+					225.739,289.468 	"
+              />
+            </g></svg
+          >Install aplikasi
+        </button>
+      </div>
+    </section>
+
+    <!-- ===[SIGN IN]=== -->
+    <section class="container signin">
+      <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <h2>Masukkan nomor HP</h2>
+      <p>Buat masuk ke akunmu, kami bakal verifikasi nomor HP kamu dulu.</p>
+      <form class="signin-form">
+        <div class="form-column">
+          <label for="phone-number">Nomor HP <span>*</span></label>
+          <p class="added-text">+62</p>
+          <input
+            type="number"
+            name="phone-number"
+            id="phone-number"
+            placeholder="899 9105 6652"
+          />
+        </div>
+        <p class="input-error-text">Ada kesalahan, mohon cek ulang nomor HP.</p>
+        <button
+          class="btn btn-lanjut btn-submit-form"
+          id="btn-signin"
+          style="display: block"
+        >
+          <!-- bryant 82210176648 -->
+          Lanjut
+        </button>
+        <button class="btn btn-load" style="display: none">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+      </form>
+    </section>
+
+    <!-- ===[SIGN UP AS]=== -->
+    <section class="container signup-as">
+      <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <h2>
+        Daftar akun <br />
+        sebagai
+      </h2>
+      <div class="signup-as-options">
+        <button class="btn btn-signup-as-1">Bengkel</button>
+        <p>atau</p>
+        <button class="btn btn-signup-as-2">Pengendara Motor</button>
+      </div>
+    </section>
+
+    <!-- ===[SIGN UP PENGENDARA]=== -->
+    <section class="container signup-pengendara">
+      <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <h2>Daftar Pengendara Motor</h2>
+      <p>Masukkan data diri kamu dengan benar untuk mendaftarkan akun.</p>
+      <form>
+        <input type="hidden" name="role" value="pengendara" />
+        <div class="form-column">
+          <label for="phone-number"
+            >Nomor HP <br />(Whatsapp)<span>*</span></label
+          >
+          <p class="added-text">+62</p>
+          <input
+            type="number"
+            name="phone-number"
+            id="phone-number"
+            placeholder="899 9105 6652"
+          />
+        </div>
+        <div class="form-column">
+          <label for="pengendara-name">Nama <span>*</span></label>
+          <input
+            type="text"
+            name="pengendara-name"
+            id="pengendara-name"
+            placeholder="Aryo Muhammad"
+          />
+        </div>
+        <div class="form-column">
+          <label for="email">Email <span>*</span></label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="aryo@gmail.com"
+          />
+        </div>
+        <p class="input-error-text">Semua kolom wajib diisi!</p>
+
+        <!-- TAMBAH KETERANGAN BINTANG WAJIB DIISI (*) Wajib diisi-->
+        <button
+          class="btn btn-lanjut btn-submit-form"
+          id="btn-signup-pengendara"
+        >
+          Selanjutnya
+        </button>
+        <button class="btn btn-load" style="display: none">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+      </form>
+    </section>
+
+    <!-- ===[SIGN UP BENGKEL]=== -->
+    <section class="container signup-bengkel">
+      <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <h2>Daftar Bengkel</h2>
+      <p>Masukkan data diri kamu dengan benar untuk mendaftarkan akun.</p>
+      <form>
+        <p class="column-header">Data Pemilik Bengkel</p>
+        <input type="hidden" name="role" value="bengkel" />
+        <div class="form-column">
+          <label for="phone-number"
+            >Nomor HP <br />(Whatsapp)<span>*</span></label
+          >
+          <p class="added-text">+62</p>
+          <input
+            type="number"
+            name="phone-number"
+            id="phone-number"
+            placeholder="899 9105 6652"
+          />
+        </div>
+        <div class="form-column">
+          <label for="owner-name">Nama Pemilik<span>*</span></label>
+          <input
+            type="text"
+            name="owner-name"
+            id="owner-name"
+            placeholder="Drajat Mangkubumi"
+          />
+        </div>
+        <br />
+        <p class="column-header">Data Bengkel</p>
+        <div class="form-column">
+          <label for="bengkel-name">Nama Bengkel<span>*</span></label>
+          <input
+            type="text"
+            name="bengkel-name"
+            id="bengkel-name"
+            placeholder="Bengkel Mas Drajat"
+          />
+        </div>
+        <div class="form-column">
+          <label for="bengkel-address">Alamat Bengkel<span>*</span></label>
+          <input
+            type="text"
+            name="bengkel-address"
+            id="bengkel-address"
+            placeholder="Ds. Sidakangen RT 01 / RW 02"
+          />
+        </div>
+        <div class="form-column deskripsi">
+          <label for="bengkel-description"
+            >Deskripsi Bengkel<span>*</span></label
+          >
+          <textarea
+            id="bengkel-description"
+            name="bengkel-description"
+            rows="5"
+            cols="33"
+            placeholder="Bengkel ini melayani tambal ban, strum accu . . ."
+          ></textarea>
+          <p class="helper-text">
+            Perhatian : Deskripsi berisi tentang Bengkel dan layanan apa saja
+            yang ada pada Bengkel Anda
+          </p>
+        </div>
+        <div class="form-column">
+          <label>Waktu Buka<span>*</span></label>
+          <input type="time" name="open-time" /> sampai
+          <input type="time" name="close-time" />
+        </div>
+        <p class="input-error-text">Semua kolom wajib diisi!</p>
+        <button class="btn btn-lanjut btn-submit-form" id="btn-signup-bengkel">
+          Selanjutnya
+        </button>
+        <button class="btn btn-load" style="display: none">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+      </form>
+    </section>
+
+    <!-- ===[OTP VERIFICATION]]=== -->
+    <section class="container otp-verify">
+      <!-- <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button> -->
+      <h2>Kode OTP sudah di-SMS ya</h2>
+      <p class="otp-header-text">
+        Masukkan kode yang kami kirim ke <span>081291056652</span>.
+      </p>
+      <form>
+        <div class="form-column">
+          <label for="otp-code">Masukkan OTP<span>*</span></label>
+          <div class="otp-input-timer">
+            <input
+              type="number"
+              name="otp-code"
+              id="otp-code"
+              placeholder=". . . ."
+            />
+            <div class="otp-timer">
+              <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <p>00:<span>59</span></p>
+            </div>
+          </div>
+        </div>
+        <p class="input-error-text">Kode OTP tidak cocok, mohon cek kembali.</p>
+        <button class="btn btn-lanjut btn-submit-form">Konfirmasi</button>
+        <button class="btn btn-load" style="display: none">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+      </form>
+    </section>
+
+    <!-- ===[MAIN SECTION PENGENDARA]=== -->
+    <section class="main-pengendara">
+      <div class="offline-fallback">
+        <div>
+          <p>Maaf, koneksi internet terputus</p>
+          <button class="btn btn-yes">Coba lagi</button>
+        </div>
+      </div>
+      <div id="map-pengendara" class="map"></div>
+      <div class="map-header">
+        <div class="header-logo">
+          <img src="src/images/mapbox-icon.png" alt="" srcset="" />
+        </div>
+        <p>Pilih bengkel</p>
+        <div class="photo-box">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="user-photo"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+            />
+          </svg>
+        </div>
+      </div>
+      <!-- <p class="waiting-text">Mencari lokasi Anda...</p> -->
+
+      <!-- ==== CARD NAV PENGENDARA=== -->
+      <div class="card nav-pengendara">
+        <div class="nav-header">
+          <p>Profil Anda</p>
+          <div class="btn-close">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect
+                width="24"
+                height="24"
+                transform="rotate(180 12 12)"
+                opacity="0"
+              />
+              <path
+                d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="pengendara-identity">
+          <div class="photo-box">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="user-photo"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+              />
+            </svg>
+          </div>
+          <p class="identity-name"></p>
+        </div>
+        <div class="pengendara-profil">
+          <div class="profil-line">
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 455.861 455.861"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M52.616,139.032l102.427,88.898L52.616,316.828c-6.162,5.349-6.823,14.68-1.474,20.843
+				c5.349,6.162,14.68,6.821,20.842,1.474l105.6-91.651l40.663,35.292c2.778,2.411,6.231,3.616,9.684,3.616s6.906-1.205,9.684-3.616
+				l40.663-35.292l105.6,91.651c6.162,5.348,15.493,4.688,20.842-1.474c5.349-6.163,4.688-15.494-1.474-20.843L300.819,227.93
+				l102.427-88.898c6.163-5.349,6.823-14.68,1.474-20.843c-5.349-6.163-14.682-6.822-20.842-1.474
+				c-8.592,7.457-146.799,127.408-155.947,135.348c-9.151-7.942-147.358-127.893-155.947-135.348
+				c-6.162-5.348-15.494-4.687-20.842,1.474C45.793,124.352,46.454,133.683,52.616,139.032z"
+                />
+                <path
+                  d="M441.088,63.154H14.774C6.615,63.154,0,69.77,0,77.929v300.003c0,8.16,6.615,14.774,14.774,14.774h426.313
+				c8.16,0,14.774-6.614,14.774-14.774V77.929C455.862,69.77,449.248,63.154,441.088,63.154z M426.314,363.157h-0.001H29.549V92.703
+				h396.765V363.157z"
+                />
+              </g>
+            </svg>
+            <p class="email"></p>
+          </div>
+          <div class="profil-line">
+            <svg
+              viewBox="0 0 28 28"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g
+                id="🔍-Product-Icons"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <g
+                  id="ic_fluent_phone_28_regular"
+                  fill="#212121"
+                  fill-rule="nonzero"
+                >
+                  <path
+                    d="M7.92072596,2.64472005 L9.58060919,2.14438844 C11.1435675,1.67327249 12.8134781,2.43464008 13.4828053,3.92352899 L14.5160823,6.22200834 C15.0865915,7.491081 14.7859439,8.98254111 13.7683291,9.93148073 L11.9633958,11.6146057 C11.9410906,11.6354021 11.9227774,11.6601187 11.9093651,11.6875342 C11.720585,12.0734103 12.0066606,13.1043886 12.9061418,14.6623357 C13.9199541,16.4183102 14.7035571,17.1131712 15.0654726,17.005305 L17.4348517,16.2809111 C18.765101,15.8742119 20.2066891,16.3591908 21.0206203,17.4872349 L22.4880851,19.5210248 C23.440761,20.8413581 23.2694403,22.6628821 22.0872853,23.782427 L20.8252038,24.9776653 C19.9337363,25.8219337 18.6854328,26.1763171 17.4833291,25.9264007 C13.966189,25.1951903 10.8150019,22.3628582 8.00336279,17.4929565 C5.18895293,12.6182556 4.31270988,8.46966127 5.44310245,5.05625686 C5.82703045,3.89692852 6.75144427,2.9971717 7.92072596,2.64472005 Z M8.35362603,4.08089467 C7.65205693,4.29236569 7.09740832,4.83222008 6.86705161,5.52781682 C5.89305385,8.46896164 6.6820141,12.2043134 9.30240089,16.7429565 C11.9202871,21.2772684 14.7578382,23.8276999 17.7886493,24.4578029 C18.5099109,24.6077526 19.2588899,24.3951235 19.7937719,23.888561 L21.0558584,22.6933179 C21.6924034,22.0904861 21.784653,21.1096654 21.2716737,20.3987168 L19.8042088,18.3649269 C19.3659382,17.7575185 18.5896985,17.496376 17.8734103,17.7153679 L15.4990066,18.4412788 C14.1848357,18.833027 12.9496858,17.7377562 11.6071037,15.4123357 C10.4705242,13.4437223 10.075962,12.0217729 10.5619671,11.0283539 C10.6558865,10.8363778 10.7841758,10.6632305 10.9404443,10.5175321 L12.7453325,8.83444937 C13.2932789,8.32348189 13.455166,7.52038798 13.1479688,6.83704116 L12.1146918,4.53856182 C11.7542848,3.7368524 10.8551022,3.32688524 10.0135093,3.58056306 L8.35362603,4.08089467 Z"
+                    id="🎨-Color"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <p class="phone-number"></p>
+          </div>
+        </div>
+        <div class="pengendara-nav-buttons">
+          <div class="btn btn-edit-pengendara">Ubah Profil</div>
+          <button class="btn btn-install-app not-active">
+            <?xml version="1.0" encoding="utf-8"?>
+
+            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+            <svg
+              height="800px"
+              width="800px"
+              version="1.1"
+              id="_x32_"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  class="st0"
+                  d="M426.537,0H179.641c-22.243,0-40.376,18.175-40.376,40.401v129.603h25.221V69.106h277.206V424.46H164.485
+					v-83.887h-25.221v131.034c0,22.192,18.133,40.392,40.376,40.392h246.896c22.192,0,40.375-18.2,40.375-40.392v-129.03V40.401
+					C466.912,18.175,448.728,0,426.537,0z M303.08,478.495c-9.174,0-16.636-7.47-16.636-16.661c0-9.183,7.462-16.653,16.636-16.653
+					c9.158,0,16.686,7.47,16.686,16.653C319.766,471.025,312.247,478.495,303.08,478.495z"
+                />
+                <polygon
+                  class="st0"
+                  points="225.739,335.774 358.778,255.289 225.739,174.804 225.739,221.11 45.088,221.11 45.088,289.468 
+					225.739,289.468 	"
+                />
+              </g></svg
+            >Install aplikasi
+          </button>
+          <button class="btn btn-logout">Logout</button>
+        </div>
+      </div>
+
+      <!-- ==== CARD INFO BENGKEL=== -->
+      <div class="card bengkel-info">
+        <button class="btn-card-back">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+        </button>
+
+        <p class="info-bengkel-name">Bengkel Mas Drajat</p>
+        <div class="status">
+          <div class="tag bengkel-tag not-available">Tutup</div>
+          <div class="tag montir-tag not-available">Montir tidak tersedia</div>
+        </div>
+        <div class="rating-stat">
+          <div class="rating-sum">0</div>
+          <div class="rating-stars">
+            <p class="rate">
+              <svg class="c-icon" viewBox="0 0 32 32">
+                <use href="#star" fill="url(#null)"></use>
+              </svg>
+            </p>
+            <p class="rate">
+              <svg class="c-icon" viewBox="0 0 32 32">
+                <use href="#star" fill="url(#null)"></use>
+              </svg>
+            </p>
+            <p class="rate">
+              <svg class="c-icon" viewBox="0 0 32 32">
+                <use href="#star" fill="url(#null)"></use>
+              </svg>
+            </p>
+            <p class="rate">
+              <svg class="c-icon" viewBox="0 0 32 32">
+                <use href="#star" fill="url(#null)"></use>
+              </svg>
+            </p>
+            <p class="rate">
+              <svg class="c-icon" viewBox="0 0 32 32">
+                <use href="#star" fill="url(#null)"></use>
+              </svg>
+            </p>
+          </div>
+          <div class="rating-total-reviewers">(0)</div>
+        </div>
+        <div class="info-buttons">
+          <button class="btn btn-route">
+            <svg
+              version="1.0"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 96.000000 96.000000"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <g
+                transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
+                stroke="none"
+              >
+                <path
+                  d="M263 697 c-112 -111 -203 -209 -203 -217 0 -19 401 -420 420 -420 19
+						0 420 401 420 420 0 19 -401 420 -420 420 -8 0 -106 -91 -217 -203z m380 -200
+						l-48 -48 -3 30 -3 31 -66 0 c-92 0 -103 -11 -103 -110 0 -87 -16 -123 -47
+						-104 -27 16 -31 155 -6 203 29 56 62 73 147 79 l76 5 0 30 0 31 50 -49 50 -49
+						-47 -49z"
+                />
+              </g></svg
+            >Rute
+          </button>
+          <button class="btn btn-call not-available">
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 120.64 122.88"
+              style="enable-background: new 0 0 120.64 122.88"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M54.03,108.91c-1.55,1.63-2.31,3.74-2.28,5.85c0.03,2.11,0.84,4.2,2.44,5.79l0.12,0.12c1.58,1.5,3.6,2.23,5.61,2.2 c2.01-0.03,4.01-0.82,5.55-2.37c17.66-17.66,35.13-35.61,52.68-53.4c0.07-0.05,0.13-0.1,0.19-0.16c1.55-1.63,2.31-3.76,2.28-5.87 c-0.03-2.11-0.85-4.21-2.45-5.8l-0.27-0.26C100.43,37.47,82.98,19.87,65.46,2.36C63.93,0.82,61.93,0.03,59.92,0 c-2.01-0.03-4.03,0.7-5.61,2.21l-0.15,0.15c-1.57,1.58-2.38,3.66-2.41,5.76c-0.03,2.1,0.73,4.22,2.28,5.85l47.22,47.27 L54.03,108.91L54.03,108.91z M2.26,106.91c-1.54,1.62-2.29,3.73-2.26,5.83c0.03,2.11,0.84,4.2,2.44,5.79l0.12,0.12 c1.57,1.5,3.6,2.23,5.61,2.21c2.01-0.03,4.02-0.82,5.55-2.37C31.01,101.2,48.87,84.2,66.39,67.12c0.07-0.05,0.14-0.11,0.21-0.17 c1.55-1.63,2.31-3.76,2.28-5.87c-0.03-2.11-0.85-4.21-2.45-5.8C48.94,38.33,31.36,21.44,13.83,4.51l-0.12-0.13 c-1.53-1.54-3.53-2.32-5.54-2.35C6.16,2,4.14,2.73,2.56,4.23L2.41,4.38C0.84,5.96,0.03,8.05,0,10.14c-0.03,2.1,0.73,4.22,2.28,5.85 l47.18,45.24L2.26,106.91L2.26,106.91z"
+                />
+              </g>
+            </svg>
+            Panggil montir
+          </button>
+          <button class="btn btn-view-more">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.4">
+              <path
+                class="cls-1"
+                d="M35.37,0h86a1.56,1.56,0,0,1,1.55,1.55V20.21a1.58,1.58,0,0,1-1.55,1.54h-86a1.56,1.56,0,0,1-1.54-1.54V1.55A1.54,1.54,0,0,1,35.37,0Zm0,80.65h86a1.56,1.56,0,0,1,1.55,1.54v18.67a1.58,1.58,0,0,1-1.55,1.54h-86a1.56,1.56,0,0,1-1.54-1.54V82.19a1.54,1.54,0,0,1,1.54-1.54Zm-33.82,0h16a1.56,1.56,0,0,1,1.55,1.54v18.67a1.58,1.58,0,0,1-1.55,1.54h-16A1.56,1.56,0,0,1,0,100.86V82.19a1.54,1.54,0,0,1,1.55-1.54ZM35.37,62.08h86a1.56,1.56,0,0,0,1.55-1.55V41.87a1.58,1.58,0,0,0-1.55-1.55h-86a1.57,1.57,0,0,0-1.54,1.55V60.53a1.55,1.55,0,0,0,1.54,1.55Zm-33.82,0h16a1.56,1.56,0,0,0,1.55-1.55V41.87a1.58,1.58,0,0,0-1.55-1.55h-16A1.57,1.57,0,0,0,0,41.87V60.53a1.55,1.55,0,0,0,1.55,1.55ZM1.55,0h16A1.56,1.56,0,0,1,19.1,1.55V20.21a1.58,1.58,0,0,1-1.55,1.54h-16A1.56,1.56,0,0,1,0,20.21V1.55A1.54,1.54,0,0,1,1.55,0Z"
+              />
+            </svg>
+            Selengkapnya
+          </button>
+        </div>
+        <div class="images-slider"></div>
+        <!-- Slider main container -->
+        <!-- <div class="profile">
+          <img src="./src/images/support.png" alt="bengkel's profile picture" />
+          <p class="join-since">
+            Bergabung di aplikasi sejak <br />
+            <span>17 Oktober 2022</span>
+          </p>
+        </div> -->
+        <!-- <hr /> -->
+        <div class="services address">
+          <div class="services-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92.25 122.88">
+              <path
+                d="M49.1,122.34a2.75,2.75,0,0,1-3.12.1A109.7,109.7,0,0,1,19,98.35C9.15,86,3,72.33.83,59.16-1.33,45.79.69,32.94,7.34,22.49A45.14,45.14,0,0,1,17.39,11.35C26.77,3.87,37.49-.08,48.16,0c10.29.08,20.43,3.92,29.2,11.91a43,43,0,0,1,7.79,9.49c7.15,11.77,8.69,26.8,5.55,42a92.52,92.52,0,0,1-41.6,58.92Zm-3-98.58a23,23,0,1,1-22.94,23A23,23,0,0,1,46.13,23.76Z"
+              />
+            </svg>
+          </div>
+          <div class="services-text">
+            Ds. Sidakangen RT berapa RW berapa, rumah warna ungu dekat pak RT
+          </div>
+        </div>
+        <div class="services open-time">
+          <div class="services-icon">
+            <svg
+              version="1.0"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 96.000000 96.000000"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <g
+                transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
+              >
+                <path
+                  d="M386 870 c-63 -16 -153 -70 -197 -117 -22 -24 -55 -74 -72 -111 -29
+				-61 -32 -76 -32 -163 0 -90 2 -99 37 -171 45 -90 104 -148 191 -188 72 -33
+				137 -47 137 -29 0 6 9 23 20 39 l20 27 -52 7 c-56 8 -128 41 -175 80 -16 14
+				-45 53 -64 88 -31 58 -34 70 -33 148 0 69 5 94 24 135 115 237 450 246 567 15
+				18 -36 35 -76 37 -91 4 -15 21 -35 47 -52 l42 -28 -6 63 c-20 191 -182 344
+				-375 354 -42 2 -94 -1 -116 -6z"
+                />
+                <path
+                  d="M440 607 l0 -113 -70 -69 c-38 -38 -70 -74 -70 -80 0 -12 36 -45 48
+			  -45 4 0 44 37 90 83 l82 82 0 128 0 127 -40 0 -40 0 0 -113z"
+                />
+                <path
+                  d="M691 426 c-87 -48 -50 -186 49 -186 51 0 100 49 100 99 0 75 -83 124
+			  -149 87z"
+                />
+                <path
+                  d="M646 149 c-48 -12 -103 -44 -116 -69 -6 -10 -10 -32 -10 -49 l0 -31
+			  220 0 220 0 0 35 c0 42 -31 78 -87 102 -46 19 -174 26 -227 12z"
+                />
+              </g>
+            </svg>
+          </div>
+          <div class="services-text">Buka jam 09.00 - 20.00</div>
+        </div>
+        <div class="services description">
+          <div class="services-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              shape-rendering="geometricPrecision"
+              text-rendering="geometricPrecision"
+              image-rendering="optimizeQuality"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              viewBox="0 0 419 511.67"
+            >
+              <path
+                d="M93.01 39.4h46.12C141.84 17.18 159.77 0 181.52 0c21.61 0 39.45 16.95 42.33 38.94l46.77.46c2.61 0 4.7 2.1 4.7 4.71v51.84c0 2.61-2.09 4.7-4.7 4.7H93.05c-2.56 0-4.71-2.09-4.71-4.7V44.11a4.646 4.646 0 0 1 4.67-4.71zm221.96 264.22c57.47 0 104.03 46.58 104.03 104.02 0 57.47-46.59 104.03-104.03 104.03-57.47 0-104.02-46.59-104.02-104.03 0-57.47 46.58-104.02 104.02-104.02zm30.76 52c-1.35-.91-2.87-1.33-4.42-1.02-1.54.3-2.87 1.13-3.79 2.46l-5.23 7.38c-3.54-1.59-8.05-2.62-11.89-3.17l-1.64-9.65c-.31-1.62-1.13-2.86-2.36-3.79-1.33-.92-2.76-1.23-4.4-.92l-12.09 2.15c-1.54.31-2.78 1.03-3.79 2.36-.92 1.33-1.33 2.78-1.04 4.42l1.54 8.81c-3.72 1.56-7.4 3.82-10.55 6.35l-8.2-5.64c-1.33-.92-2.76-1.33-4.3-1.02-1.54.31-2.88 1.13-3.79 2.46l-6.98 9.95c-.91 1.33-1.33 2.86-1.02 4.39.3 1.65 1.12 2.88 2.46 3.79l7.37 5.24c-1.55 3.51-2.61 8.08-3.16 11.88l-9.64 1.64c-1.64.32-2.87 1.13-3.8 2.37-.92 1.33-1.22 2.75-.92 4.4l2.14 12.09c.32 1.55 1.04 2.77 2.37 3.8 1.33.93 2.77 1.34 4.41 1.02l8.82-1.54c1.63 3.86 3.84 7.33 6.34 10.67l-5.64 8.09c-.92 1.33-1.33 2.78-1.01 4.31.31 1.53 1.13 2.86 2.46 3.79l10.04 7.06c1.33.94 2.87 1.24 4.4.94 1.54-.31 2.87-1.03 3.91-2.36l5.21-7.49c3.6 1.58 8.01 2.59 11.9 3.18l1.65 9.64c.29 1.64 1.11 2.87 2.34 3.8 1.34.91 2.78 1.22 4.41.91l12.1-2.15c1.54-.31 2.76-1.03 3.79-2.36.92-1.33 1.33-2.76 1.02-4.4l-1.53-8.82c3.89-1.63 7.29-3.84 10.66-6.36l8.1 5.64c1.33.92 2.76 1.33 4.4 1.02 1.64-.3 2.87-1.11 3.8-2.46l7.06-10.04c.92-1.33 1.24-2.87.92-4.4-.29-1.55-1.01-2.87-2.34-3.9l-7.49-5.12c1.56-3.52 2.62-8.09 3.17-11.89l9.64-1.64c1.64-.31 2.87-1.13 3.8-2.36.92-1.33 1.23-2.76.92-4.4l-2.15-12.1c-.31-1.54-1.03-2.77-2.37-3.79-1.33-.93-2.77-1.34-4.41-1.03l-8.81 1.54c-1.7-3.83-3.72-7.28-6.35-10.55l5.64-8.21c.92-1.33 1.33-2.77 1.02-4.3-.31-1.54-1.13-2.87-2.46-3.8l-9.95-6.96-.29.09zm-30.74 26.18c14.27 0 25.84 11.57 25.84 25.84s-11.57 25.84-25.84 25.84-25.85-11.57-25.85-25.84 11.58-25.84 25.85-25.84zM41.73 59.28h23.93v24.37H41.73c-4.77 0-9.12 1.97-12.25 5.1-3.14 3.14-5.1 7.48-5.1 12.24v315.52c0 4.75 1.96 9.1 5.1 12.24 3.15 3.15 7.51 5.12 12.25 5.12h142.61c1.69 8.44 4.17 16.6 7.37 24.38H41.73c-11.45 0-21.9-4.71-29.47-12.28C4.72 438.43 0 427.98 0 416.51V100.99c0-11.48 4.7-21.91 12.25-29.46 7.55-7.55 17.99-12.25 29.48-12.25zm297.54 217.35V100.99c0-4.77-1.96-9.11-5.09-12.26a17.36 17.36 0 0 0-12.26-5.08H298V59.28h23.92c11.44 0 21.86 4.71 29.41 12.25 7.61 7.61 12.32 18.04 12.32 29.46V283.6c-7.79-3.07-15.95-5.42-24.38-6.97zm-206.74-8.06c-7.13 0-12.93-5.79-12.93-12.92s5.8-12.93 12.93-12.93h142.82c7.13 0 12.92 5.8 12.92 12.93s-5.79 12.92-12.92 12.92H132.53zM89.5 241.21c7.98 0 14.44 6.47 14.44 14.44 0 7.98-6.46 14.44-14.44 14.44-7.97 0-14.44-6.46-14.44-14.44 0-7.97 6.47-14.44 14.44-14.44zm0 78.62c7.98 0 14.44 6.47 14.44 14.44 0 7.98-6.46 14.44-14.44 14.44-7.97 0-14.44-6.46-14.44-14.44 0-7.97 6.47-14.44 14.44-14.44zm43.04 27.36c-7.13 0-12.93-5.79-12.93-12.92s5.8-12.93 12.93-12.93h80.96a133.913 133.913 0 0 0-17.26 25.85h-63.7zM89.5 162.61c7.98 0 14.44 6.46 14.44 14.43 0 7.98-6.46 14.44-14.44 14.44-7.97 0-14.44-6.46-14.44-14.44 0-7.97 6.47-14.43 14.44-14.43zm43.03 27.35c-7.13 0-12.93-5.79-12.93-12.92 0-7.14 5.8-12.93 12.93-12.93h142.82c7.13 0 12.92 5.79 12.92 12.93 0 7.13-5.79 12.92-12.92 12.92H132.53zm48.5-169.8c12.29 0 22.26 9.96 22.26 22.27 0 12.29-9.97 22.25-22.26 22.25-12.3 0-22.26-9.96-22.26-22.25 0-12.31 9.96-22.27 22.26-22.27z"
+              />
+            </svg>
+          </div>
+          <div class="services-text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium
+            ratione possimus esse explicabo sint minima consequatur aperiam
+          </div>
+        </div>
+        <div class="reviews">
+          <p class="reviews-heading">Ulasan</p>
+          <p class="no-review-text">Belum ada ulasan</p>
+          <div class="review-cards"></div>
+        </div>
+      </div>
+      <!-- ==== CARD SHOW ROUTE === -->
+      <div class="card show-route">
+        <button class="btn-card-back">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+        </button>
+        <p class="route-bengkel-name">Bengkel Mas Drajat</p>
+        <p class="route-distance">5 mnt (5 km)</p>
+        <!-- <div class="route-indicators">
+          <div class="pengendara-indicator">Lokasi Anda</div>
+          <div class="bengkel-indicator">Lokasi Bengkel</div>
+        </div> -->
+      </div>
+      <!-- ==== CARD CALL MONTIR === -->
+      <div class="card call-montir-desc">
+        <p class="heading">Masalah apa yang dialami motormu?</p>
+        <form>
+          <textarea
+            id="problem-desc"
+            name="problem-desc"
+            rows="5"
+            cols="33"
+            placeholder="Misal: Ban bocor, motor tidak bisa jalan jauh"
+          ></textarea>
+          <p class="helper-text">Perhatian: deskripsikan secara detail ya!</p>
+          <p class="input-error-text">Kolom wajib diisi!</p>
+
+          <button class="btn btn-submit">Selanjutnya</button>
+        </form>
+      </div>
+      <!-- ==== CARD ORDER CONFIRMATION === -->
+      <div class="card order-confirmation">
+        <h2 class="heading">Konfirmasi Panggilan</h2>
+        <p class="subheading">Kamu akan memanggil montir dari bengkel :</p>
+        <div class="main-bengkel-profile">
+          <!-- <div class="bengkel-profile-pict">
+            <img
+              src="./src/images/customer-service.png"
+              alt="reviewer's profile picture"
+            />
+          </div> -->
+          <p class="bengkel-name">Bengkel Mas Drajat</p>
+        </div>
+        <p class="subheading">Masalah yang dialami motor kamu adalah :</p>
+        <p class="problem-desc">Ban bocor, motor tidak bisa jalan jauh</p>
+        <p class="confirm-text">Apakah kamu yakin?</p>
+        <div class="order-confirmation-buttons">
+          <button class="btn btn-yes btn-submit-form">Ya, saya yakin</button>
+          <button class="btn btn-load" style="display: none">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </button>
+          <button class="btn btn-no">Batal</button>
+        </div>
+      </div>
+      <!-- <button class="btn btn-logout">Logout</button> -->
+
+      <!-- ==== WAITING CARD === -->
+      <div class="card waiting-card">
+        <p>Memanggil montir Bengkel Mas Drajat..</p>
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <!-- ==== ORDER REJECTED CARD === -->
+      <div class="card order-rejected">
+        <p class="heading">Yah, montir sedang sibuk</p>
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 511.999 511.999"
+          style="enable-background: new 0 0 511.999 511.999"
+          xml:space="preserve"
+        >
+          <g>
+            <g>
+              <path
+                d="M470.486,116.194c-26.457-40.51-63.611-72.601-107.443-92.805c-5.025-2.314-10.964-0.12-13.278,4.9
+			c-2.312,5.02-0.12,10.964,4.9,13.278c40.412,18.626,74.668,48.217,99.065,85.572c25.028,38.321,38.256,82.881,38.256,128.862
+			c0,130.123-105.863,235.983-235.985,235.983S20.015,386.123,20.015,256.001S125.877,20.015,255.999,20.015
+			c5.528,0,10.007-4.479,10.007-10.007C266.007,4.479,261.527,0,255.999,0C114.84,0,0,114.841,0,256.001
+			c0,141.158,114.84,255.998,255.999,255.998s255.999-114.84,255.999-255.998C512,206.122,497.644,157.778,470.486,116.194z"
+              />
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M397.001,377.025l-16.719-16.718c-3.907-3.907-10.244-3.907-14.152,0l-9.468,9.47l-11.731-11.733
+			c-1.877-1.877-4.422-2.931-7.077-2.931s-5.198,1.054-7.077,2.93l-14.17,14.172l-12.776-12.777
+			c-1.877-1.877-4.422-2.931-7.077-2.931s-5.198,1.054-7.077,2.931l-12.428,12.429l-8.597-8.598
+			c-3.911-3.907-10.246-3.907-14.156-0.001L238.3,379.463c-3.908,3.909-3.908,10.245,0,14.153c1.955,1.953,4.517,2.93,7.077,2.93
+			s5.122-0.977,7.077-2.93l9.119-9.12l8.597,8.598c1.877,1.876,4.422,2.93,7.077,2.93s5.198-1.054,7.077-2.931l12.428-12.428
+			l12.776,12.776c1.877,1.877,4.422,2.931,7.077,2.931c2.655,0,5.198-1.054,7.077-2.93l14.17-14.172l11.731,11.733
+			c1.876,1.877,4.422,2.931,7.077,2.931s5.198-1.054,7.077-2.93l9.468-9.47l9.644,9.643c3.907,3.907,10.244,3.908,14.152-0.001
+			C400.911,387.269,400.911,380.932,397.001,377.025z"
+              />
+            </g>
+          </g>
+          <g>
+            <g>
+              <circle cx="324.744" cy="20.015" r="10.007" />
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M257.388,234.367l-61.96-27.353c-5.052-2.231-10.964,0.056-13.196,5.113c-2.231,5.057,0.057,10.965,5.114,13.198
+			l41.094,18.143l-41.054,17.902c-5.065,2.21-7.381,8.107-5.172,13.174c1.641,3.764,5.317,6.01,9.177,6.01
+			c1.334,0,2.693-0.268,3.995-0.838l61.96-27.02c3.641-1.588,5.998-5.177,6.007-9.151
+			C263.363,239.573,261.023,235.971,257.388,234.367z"
+              />
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M440.715,261.373l-41.054-17.902l41.094-18.143c5.057-2.232,7.347-8.141,5.114-13.198s-8.143-7.345-13.196-5.113
+			l-61.96,27.353c-3.633,1.604-5.975,5.205-5.966,9.177c0.009,3.972,2.366,7.563,6.007,9.151l61.96,27.02
+			c1.302,0.568,2.661,0.837,3.995,0.837c3.86,0,7.536-2.246,9.177-6.01C448.096,269.479,445.781,263.582,440.715,261.373z"
+              />
+            </g>
+          </g>
+        </svg>
+        <p class="subheading">Tenang, masih ada bengkel lain!</p>
+        <br /><br />
+        <button class="btn btn-yes">Oke</button>
+      </div>
+
+      <!-- ==== MONTIR IS COMING CARD ==== -->
+      <div class="card montir-is-coming">
+        <p class="heading">Montir sedang menuju lokasimu!</p>
+        <div class="main-bengkel-profile">
+          <div class="bengkel-profile-pict">
+            <img
+              src="./src/images/customer-service.png"
+              alt="reviewer's profile picture"
+            />
+          </div>
+          <p class="bengkel-name">Bengkel Mas Drajat</p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 480 480"
+          style="enable-background: new 0 0 480 480"
+          xml:space="preserve"
+        >
+          <g>
+            <circle style="fill: #4aa1b5" cx="392" cy="368" r="72" />
+            <circle style="fill: #4aa1b5" cx="392" cy="368" r="27" />
+          </g>
+          <circle style="fill: #ad5f26" cx="392" cy="368" r="72" />
+          <circle style="fill: #f7fafd" cx="392" cy="368" r="27" />
+          <circle style="fill: #ad5f26" cx="88" cy="368" r="72" />
+          <circle style="fill: #f7fafd" cx="88" cy="368" r="27" />
+          <polygon
+            style="fill: #e67f33"
+            points="136,128 104,128 96,160 152,160 "
+          />
+          <polygon
+            style="fill: #ad5f26"
+            points="216,184 272,224 408,224 440,192 288,192 "
+          />
+          <rect x="344" y="224" style="fill: #f7fafd" width="64" height="32" />
+          <polygon
+            style="fill: #e67f33"
+            points="120,232 168,232 216,184 152,160 96,160 104,192 "
+          />
+          <polygon
+            style="fill: #f7fafd"
+            points="96,160 72,160 64,192 104,192 "
+          />
+          <polygon
+            style="fill: #e67f33"
+            points="192,328 160,264 224,264 240,296 224,328 "
+          />
+          <g>
+            <polygon
+              style="fill: #fcb641"
+              points="312,288 280,272 226.04,264 240,296 224,328 288,320 	"
+            />
+            <polygon
+              style="fill: #fcb641"
+              points="288,224 280,272 312,288 344,256 344,224 	"
+            />
+            <polygon
+              style="fill: #fcb641"
+              points="168.664,232.328 216.328,184.16 272.168,224.728 224,264 160,264 	"
+            />
+          </g>
+          <g>
+            <path
+              style="fill: #132c47"
+              d="M408,232H272c-1.664,0-3.296-0.52-4.648-1.488l-56-40c-2.968-2.12-4.128-5.968-2.824-9.368
+		s4.712-5.52,8.352-5.088L288.448,184H440c3.232,0,6.16,1.952,7.392,4.936c1.24,2.992,0.552,6.432-1.736,8.72l-32,32
+		C412.16,231.16,410.128,232,408,232z M274.56,216h130.128l16-16H288c-0.296,0-0.592-0.016-0.88-0.048l-41.472-4.608L274.56,216z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M88.008,376c-0.608,0-1.224-0.064-1.84-0.208c-4.304-1.016-6.968-5.32-5.96-9.624l32-136
+		c1.016-4.304,5.336-6.968,9.624-5.96c4.304,1.016,6.968,5.32,5.96,9.624l-32,136C94.92,373.512,91.632,376,88.008,376z"
+            />
+          </g>
+          <polygon
+            style="fill: #e67f33"
+            points="272,224 224,264 280,272 288,224 "
+          />
+          <g>
+            <path
+              style="fill: #132c47"
+              d="M88,333c-19.304,0-35,15.696-35,35s15.696,35,35,35s35-15.696,35-35S107.304,333,88,333z M88,387
+		c-10.48,0-19-8.52-19-19s8.52-19,19-19s19,8.52,19,19S98.48,387,88,387z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M472,360h-0.408c-0.48-4.856-1.456-9.552-2.768-14.112l0.424-0.168
+		c4.104-1.64,6.104-6.296,4.464-10.4s-6.328-6.096-10.4-4.456l-0.432,0.176c-2.544-4.848-5.528-9.424-8.976-13.632l0.32-0.32
+		c3.128-3.128,3.128-8.192,0-11.32c-3.128-3.12-8.184-3.12-11.312,0l-0.32,0.32c-3.464-2.84-7.2-5.352-11.112-7.584l0.192-0.44
+		c1.784-4.04-0.048-8.768-4.088-10.552c-4.048-1.776-8.76,0.048-10.552,4.08l-0.176,0.4c-5.4-1.768-11.032-3.016-16.864-3.6V288
+		c0-4.416-3.576-8-8-8s-8,3.584-8,8v0.408c-5.832,0.584-11.464,1.832-16.864,3.6l-0.176-0.4c-1.792-4.032-6.48-5.864-10.552-4.08
+		c-4.04,1.784-5.864,6.512-4.088,10.552l0.192,0.44c-3.912,2.232-7.64,4.744-11.112,7.584L323.312,288l24-24H408
+		c4.424,0,8-3.584,8-8v-8h8c4.424,0,8-3.584,8-8s-3.576-8-8-8h-8v-4.688l29.656-29.656c2.288-2.288,2.976-5.728,1.736-8.72
+		C446.16,185.952,443.232,184,440,184H288.448l-70.56-7.84l-2.048-0.768c-0.216-2.704-1.664-5.248-4.264-6.552l-32-16
+		c-3.968-1.992-8.76-0.368-10.736,3.576c-0.2,0.392-0.208,0.816-0.328,1.224l-10.76-4.032l-14.592-29.192
+		C141.8,121.712,139.032,120,136,120h-3.056l8-16H160c0,4.416,3.584,8,8,8s8-3.584,8-8h16c4.416,0,8-3.584,8-8s-3.584-8-8-8h-16
+		c0-4.416-3.584-8-8-8s-8,3.584-8,8h-24c-3.032,0-5.8,1.712-7.16,4.424L115.056,120H104c-3.672,0-6.872,2.496-7.76,6.056L89.752,152
+		H72c-3.672,0-6.872,2.496-7.76,6.056l-8,32c-0.6,2.392-0.056,4.92,1.456,6.864S61.536,200,64,200h34.584l8.952,22.384l-50.544-6.32
+		c-1.336-0.176-2.704,0.008-3.968,0.504l-40,16c-4.104,1.648-6.096,6.296-4.456,10.4C9.824,246.096,12.832,248,16,248
+		c0.992,0,1.992-0.184,2.968-0.576l38.08-15.232L119,239.936c0.136,0.016,0.248-0.04,0.384-0.032C119.6,239.92,119.792,240,120,240
+		h38.272l-5.984,21.888c-0.016,0.064,0.008,0.128-0.008,0.192c-0.272,1.096-0.328,2.224-0.128,3.336
+		c0.008,0.048,0,0.104,0.016,0.152c0.136,0.688,0.36,1.368,0.68,2.008l32,64C186.2,334.288,188.968,336,192,336h32
+		c0.328,0,0.664-0.016,0.992-0.064L240,334.064V360h-16c-4.416,0-8,3.584-8,8s3.584,8,8,8h48c4.424,0,8-3.584,8-8s-3.576-8-8-8h-16
+		v-27.936l32.992-4.128c2.16-0.272,4.112-1.4,5.408-3.136l18.464-24.624l16.904,16.904l0.32,0.32
+		c-3.44,4.2-6.432,8.776-8.976,13.632l-0.432-0.176c-4.072-1.648-8.76,0.344-10.4,4.456c-1.64,4.104,0.36,8.76,4.464,10.4
+		l0.424,0.168c-1.312,4.56-2.288,9.264-2.768,14.112H312c-4.424,0-8,3.584-8,8s3.576,8,8,8h0.408
+		c0.48,4.856,1.456,9.552,2.768,14.112l-0.424,0.168c-4.104,1.64-6.104,6.296-4.464,10.4c1.248,3.128,4.256,5.032,7.432,5.032
+		c0.992,0,2-0.184,2.968-0.576l0.432-0.176c2.544,4.848,5.528,9.424,8.976,13.632l-0.32,0.32c-3.128,3.128-3.128,8.192,0,11.32
+		c1.56,1.56,3.608,2.336,5.656,2.336s4.096-0.784,5.656-2.344l0.32-0.32c3.464,2.84,7.2,5.352,11.112,7.584l-0.192,0.44
+		c-1.784,4.04,0.048,8.768,4.088,10.552c1.056,0.464,2.152,0.688,3.224,0.688c3.072,0,6-1.784,7.328-4.768l0.176-0.4
+		c5.4,1.768,11.032,3.016,16.864,3.6V448c0,4.416,3.576,8,8,8s8-3.584,8-8v-0.408c5.832-0.584,11.464-1.832,16.864-3.6l0.176,0.4
+		c1.328,2.992,4.248,4.768,7.328,4.768c1.08,0,2.168-0.224,3.224-0.688c4.04-1.784,5.864-6.512,4.088-10.552l-0.192-0.44
+		c3.912-2.232,7.64-4.744,11.112-7.584l0.32,0.32c1.56,1.56,3.608,2.344,5.656,2.344s4.096-0.784,5.656-2.336
+		c3.128-3.128,3.128-8.192,0-11.32l-0.32-0.32c3.44-4.2,6.432-8.776,8.976-13.632l0.432,0.176c0.968,0.392,1.976,0.576,2.968,0.576
+		c3.168,0,6.176-1.904,7.432-5.032c1.64-4.104-0.36-8.76-4.464-10.4l-0.424-0.168c1.312-4.56,2.288-9.264,2.768-14.112H472
+		c4.424,0,8-3.584,8-8S476.424,360,472,360z M392,304c35.288,0,64,28.712,64,64s-28.712,64-64,64s-64-28.712-64-64
+		c0-14.768,5.072-28.336,13.504-39.184l20.824,20.824c-3.32,5.352-5.336,11.608-5.336,18.352c0,19.304,15.704,35,35,35
+		s35-15.696,35-35S411.296,333,392,333c-6.752,0-13,2.008-18.352,5.336l-20.824-20.824C363.664,309.072,377.232,304,392,304z
+		 M386.344,373.656c1.56,1.56,3.608,2.344,5.656,2.344s4.096-0.784,5.656-2.344c3.128-3.128,3.128-8.184,0-11.312l-12.136-12.136
+		c2.032-0.744,4.192-1.208,6.48-1.208c10.48,0,19,8.52,19,19s-8.52,19-19,19s-19-8.52-19-19c0-2.28,0.472-4.448,1.208-6.48
+		L386.344,373.656z M125.416,224l-13.784-34.464L106.248,168h44.304l51.008,19.128L164.688,224H125.416z M336,252.688
+		l-25.576,25.576l-21.56-10.776L294.776,232H336V252.688z M278.552,232l-5.16,30.936l-29.976-4.448L275.904,232H278.552z
+		 M175.832,236.464l41.352-41.784l0.992,0.712l40.416,29.376L221.104,256H170.48L175.832,236.464z M400,248h-48v-16h48V248z
+		 M287.12,199.952c0.288,0.032,0.584,0.048,0.88,0.048h132.688l-16,16H344h-56h-13.44l-28.92-20.656L287.12,199.952z M110.248,136
+		h20.808l8,16h-32.808L110.248,136z M78.248,168h11.504l4,16H74.248L78.248,168z M172.944,272h46.112l12,24l-12,24h-22.112
+		L172.944,272z M283.64,312.488l-45.8,5.72l9.312-18.632c0.552-1.096,0.808-2.288,0.824-3.48c0.008-0.392-0.168-0.76-0.224-1.152
+		c-0.096-0.728-0.12-1.464-0.416-2.144l-8.088-18.544l38.336,5.48l22.272,11.136L283.64,312.488z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M138.912,430.224c1.56,1.56,3.608,2.344,5.656,2.344s4.096-0.784,5.656-2.344
+		c3.128-3.128,3.128-8.184,0-11.312l-0.32-0.32c3.44-4.2,6.432-8.776,8.968-13.624l0.424,0.168c0.976,0.392,1.984,0.576,2.968,0.576
+		c3.176,0,6.176-1.904,7.432-5.032c1.648-4.104-0.352-8.76-4.456-10.4l-0.424-0.168c1.312-4.56,2.288-9.264,2.768-14.112H168
+		c4.416,0,8-3.584,8-8s-3.584-8-8-8h-0.408c-0.48-4.856-1.456-9.552-2.768-14.112l0.424-0.168c4.104-1.64,6.096-6.296,4.456-10.4
+		s-6.296-6.096-10.4-4.456l-0.424,0.168c-2.544-4.848-5.528-9.424-8.968-13.624l0.32-0.32c3.128-3.128,3.128-8.184,0-11.312
+		s-8.184-3.128-11.312,0l-0.32,0.32c-3.464-2.84-7.2-5.352-11.112-7.584l0.192-0.44c1.784-4.04-0.04-8.768-4.08-10.552
+		c-4.04-1.792-8.768,0.032-10.552,4.08l-0.176,0.408c-5.4-1.768-11.032-3.016-16.864-3.6V288c0-4.416-3.584-8-8-8s-8,3.584-8,8
+		v0.408c-5.832,0.584-11.464,1.832-16.864,3.6L62.96,291.6c-1.784-4.048-6.528-5.872-10.552-4.08
+		c-4.04,1.784-5.864,6.512-4.08,10.552l0.192,0.44c-3.912,2.232-7.648,4.744-11.112,7.584l-0.32-0.32
+		c-3.128-3.128-8.184-3.128-11.312,0s-3.128,8.184,0,11.312l0.32,0.32c-3.44,4.2-6.432,8.776-8.968,13.624l-0.424-0.168
+		c-4.112-1.656-8.76,0.344-10.4,4.456c-1.648,4.104,0.352,8.76,4.456,10.4l0.424,0.168c-1.32,4.56-2.296,9.256-2.776,14.112H8
+		c-4.416,0-8,3.584-8,8s3.584,8,8,8h0.408c0.48,4.856,1.456,9.552,2.768,14.112l-0.424,0.168c-4.104,1.64-6.096,6.296-4.456,10.4
+		c1.248,3.128,4.256,5.032,7.432,5.032c0.992,0,2-0.184,2.968-0.576l0.424-0.168c2.544,4.848,5.528,9.424,8.968,13.624l-0.32,0.32
+		c-3.128,3.128-3.128,8.184,0,11.312c1.56,1.56,3.608,2.344,5.656,2.344s4.096-0.784,5.656-2.344l0.32-0.32
+		c3.464,2.84,7.2,5.352,11.112,7.584l-0.192,0.44c-1.784,4.04,0.04,8.768,4.08,10.552c1.048,0.464,2.152,0.688,3.232,0.688
+		c3.072,0,6-1.784,7.32-4.768l0.176-0.408c5.4,1.768,11.032,3.016,16.864,3.6V448c0,4.416,3.584,8,8,8s8-3.584,8-8v-0.408
+		c5.832-0.584,11.464-1.832,16.864-3.6l0.176,0.408c1.32,2.992,4.248,4.768,7.32,4.768c1.08,0,2.176-0.224,3.232-0.688
+		c4.04-1.784,5.864-6.512,4.08-10.552l-0.192-0.44c3.912-2.232,7.648-4.744,11.112-7.584L138.912,430.224z M88,432
+		c-35.288,0-64-28.712-64-64s28.712-64,64-64s64,28.712,64,64S123.288,432,88,432z"
+            />
+            <circle style="fill: #132c47" cx="128" cy="184" r="8" />
+            <circle style="fill: #132c47" cx="208" cy="296" r="8" />
+            <path
+              style="fill: #132c47"
+              d="M120,272c4.416,0,8-3.584,8-8s-3.584-8-8-8h-16c-4.416,0-8,3.584-8,8s3.584,8,8,8H120z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M24,440H8c-4.416,0-8,3.584-8,8s3.584,8,8,8h16c4.416,0,8-3.584,8-8S28.416,440,24,440z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M240,440h-88c-4.416,0-8,3.584-8,8s3.584,8,8,8h88c4.416,0,8-3.584,8-8S244.416,440,240,440z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M320,440h-48c-4.424,0-8,3.584-8,8s3.576,8,8,8h48c4.424,0,8-3.584,8-8S324.424,440,320,440z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M472,440h-16c-4.424,0-8,3.584-8,8s3.576,8,8,8h16c4.424,0,8-3.584,8-8S476.424,440,472,440z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M216,40h24c4.416,0,8-3.584,8-8s-3.584-8-8-8h-24c-4.416,0-8,3.584-8,8S211.584,40,216,40z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M272,40h8c4.424,0,8-3.584,8-8s-3.576-8-8-8h-8c-4.424,0-8,3.584-8,8S267.576,40,272,40z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M8,72h24c4.416,0,8-3.584,8-8s-3.584-8-8-8H8c-4.416,0-8,3.584-8,8S3.584,72,8,72z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M64,72h8c4.416,0,8-3.584,8-8s-3.584-8-8-8h-8c-4.416,0-8,3.584-8,8S59.584,72,64,72z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M408,104h24c4.424,0,8-3.584,8-8s-3.576-8-8-8h-24c-4.424,0-8,3.584-8,8S403.576,104,408,104z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M464,104h8c4.424,0,8-3.584,8-8s-3.576-8-8-8h-8c-4.424,0-8,3.584-8,8S459.576,104,464,104z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M272,144c0,4.416,3.576,8,8,8h24c4.424,0,8-3.584,8-8s-3.576-8-8-8h-24
+		C275.576,136,272,139.584,272,144z"
+            />
+            <path
+              style="fill: #132c47"
+              d="M336,152h8c4.424,0,8-3.584,8-8s-3.576-8-8-8h-8c-4.424,0-8,3.584-8,8S331.576,152,336,152z"
+            />
+          </g>
+        </svg>
+        <p class="countdown-text">
+          Montir akan sampai dalam <span>2</span> menit
+        </p>
+        <p class="caution-text">
+          Mohon untuk tidak menutup aplikasi sampai montir datang.
+        </p>
+      </div>
+
+      <!-- ==== MONTIR ARRIVED CARD === -->
+      <div class="card montir-arrived">
+        <p class="heading">Pelayanan telah selesai!</p>
+        <div class="pengendara-part">
+          <p class="subheading">
+            Bagaimana pengalamanmu dengan layanan dari montir?
+          </p>
+          <form class="request-review">
+            <div class="rating-stars"></div>
+            <textarea
+              id="review"
+              name="review"
+              rows="5"
+              cols="33"
+              placeholder="Tuliskan ulasanmu disini . . ."
+            ></textarea>
+            <p class="input-error-text">Mohon berikan ulasan</p>
+            <button class="btn btn-submit-form">Beri ulasan</button>
+            <button class="btn btn-load" style="display: none">
+              <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </button>
+          </form>
+        </div>
+        <div class="bengkel-part">
+          <p class="subheading">Ulasan dari pelanggan :</p>
+          <div class="rating-stars">
+            <p class="rate">
+              <svg class="c-icon" viewBox="0 0 32 32">
+                <use href="#star" fill="url(#full)"></use>
+              </svg>
+            </p>
+            <p class="rate">
+              <svg class="c-icon" viewBox="0 0 32 32">
+                <use href="#star" fill="url(#full)"></use>
+              </svg>
+            </p>
+            <p class="rate">
+              <svg class="c-icon" viewBox="0 0 32 32">
+                <use href="#star" fill="url(#full)"></use>
+              </svg>
+            </p>
+            <p class="rate">
+              <svg class="c-icon" viewBox="0 0 32 32">
+                <use href="#star" fill="url(#full)"></use>
+              </svg>
+            </p>
+            <p class="rate">
+              <svg class="c-icon" viewBox="0 0 32 32">
+                <use href="#star" fill="url(#full)"></use>
+              </svg>
+            </p>
+          </div>
+          <p class="review-text">"Montir cepat sampai dan ramah"</p>
+          <button class="btn btn-yes">Oke</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==== [EDIT PENGENDARA SECTION] === -->
+    <section class="container pengendara-edit-profil">
+      <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <h2>Ubah Profil</h2>
+      <p>Masukkan data diri kamu dengan benar untuk mengubah profil.</p>
+      <form>
+        <input type="hidden" name="role" value="pengendara" />
+        <div class="form-column">
+          <label for="phone-number"
+            >Nomor HP <br />(Whatsapp)<span>*</span></label
+          >
+          <p class="added-text">+62</p>
+          <input type="number" name="phone-number" id="phone-number" />
+        </div>
+        <div class="form-column">
+          <label for="pengendara-name">Nama <span>*</span></label>
+          <input type="text" name="pengendara-name" id="pengendara-name" />
+        </div>
+        <div class="form-column">
+          <label for="email">Email <span>*</span></label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <p class="input-error-text">Semua kolom wajib diisi!</p>
+        <button
+          class="btn btn-lanjut btn-submit-form"
+          id="btn-update-pengendara"
+        >
+          Simpan profil baru
+        </button>
+        <button class="btn btn-load" style="display: none">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+      </form>
+    </section>
+
+    <!-- ==== [REGISTER LOCATION BENGKEL] === -->
+    <section class="register-location">
+      <div id="map-regis-location" class="map"></div>
+      <div class="register-location-header">
+        Geser peta untuk memilih lokasi bengkel
+      </div>
+      <div class="register-location-pin">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92.25 122.88">
+          <path
+            d="M49.1,122.34a2.75,2.75,0,0,1-3.12.1A109.7,109.7,0,0,1,19,98.35C9.15,86,3,72.33.83,59.16-1.33,45.79.69,32.94,7.34,22.49A45.14,45.14,0,0,1,17.39,11.35C26.77,3.87,37.49-.08,48.16,0c10.29.08,20.43,3.92,29.2,11.91a43,43,0,0,1,7.79,9.49c7.15,11.77,8.69,26.8,5.55,42a92.52,92.52,0,0,1-41.6,58.92Zm-3-98.58a23,23,0,1,1-22.94,23A23,23,0,0,1,46.13,23.76Z"
+          />
+        </svg>
+      </div>
+      <button class="btn btn-lanjut btn-submit-form btn-select-location">
+        Pilih Lokasi
+      </button>
+      <button class="btn btn-load" style="display: none">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </button>
+    </section>
+
+    <!-- ==== [MAIN SECTION BENGKEL] === -->
+    <section class="container main-bengkel is-closed">
+      <label class="ham-label">
+        <input type="checkbox" />
+        <span class="menu"> <span class="hamburger"></span> </span>
+        <ul>
+          <li><a href="#" class="btn-edit-bengkel">Ubah Profil</a></li>
+          <li>
+            <a href="#" class="btn-edit-location-bengkel"
+              >Ubah Lokasi Bengkel</a
+            >
+          </li>
+          <li><a href="#" class="btn-success-order">Panggilan Sukses</a></li>
+          <li>
+            <a href="#" class="btn-on-progress-order">Panggilan Diproses</a>
+          </li>
+          <li><a href="#" class="btn-setting-montir">Pengaturan Montir</a></li>
+          <li>
+            <button class="btn btn-install-app not-active">
+              <?xml version="1.0" encoding="utf-8"?>
+
+              <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+              <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+              <svg
+                height="800px"
+                width="800px"
+                version="1.1"
+                id="_x32_"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 512 512"
+                xml:space="preserve"
+              >
+                <g>
+                  <path
+                    class="st0"
+                    d="M426.537,0H179.641c-22.243,0-40.376,18.175-40.376,40.401v129.603h25.221V69.106h277.206V424.46H164.485
+					v-83.887h-25.221v131.034c0,22.192,18.133,40.392,40.376,40.392h246.896c22.192,0,40.375-18.2,40.375-40.392v-129.03V40.401
+					C466.912,18.175,448.728,0,426.537,0z M303.08,478.495c-9.174,0-16.636-7.47-16.636-16.661c0-9.183,7.462-16.653,16.636-16.653
+					c9.158,0,16.686,7.47,16.686,16.653C319.766,471.025,312.247,478.495,303.08,478.495z"
+                  />
+                  <polygon
+                    class="st0"
+                    points="225.739,335.774 358.778,255.289 225.739,174.804 225.739,221.11 45.088,221.11 45.088,289.468 
+					225.739,289.468 	"
+                  />
+                </g></svg
+              >Install aplikasi
+            </button>
+          </li>
+          <li><button class="btn btn-logout">Logout</button></li>
+        </ul>
+      </label>
+      <div class="main-bengkel-profile">
+        <div class="bengkel-profile-pict">
+          <img
+            src="./src/images/customer-service.png"
+            alt="reviewer's profile picture"
+          />
+        </div>
+        <div class="bengkel-profile-text">
+          <p class="bengkel-name">Bengkel Mas Drajat</p>
+          <p class="bengkel-open-time">09.00-20.00</p>
+          <a class="btn-close-bengkel" href="">[Tutup Bengkel]</a>
+        </div>
+      </div>
+      <div class="card close-bengkel">
+        <p>
+          Bengkel akan terlihat tutup oleh pelanggan, apa Anda yakin ingin
+          menutup bengkel?
+        </p>
+        <div class="close-bengkel-confirm">
+          <a href="">[Ya, tutup bengkel]</a>
+          <a href="">[Batalkan]</a>
+        </div>
+      </div>
+      <div class="main-bengkel-buttons">
+        <!-- <button class="btn btn-edit-bengkel">Edit Profil</button> -->
+        <!-- <button class="btn btn-setting-montir">Pengaturan Montir</button> -->
+      </div>
+      <div class="bengkel-init-page">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="service-state">
+        <div class="service-open no-cust">
+          <div class="is-customer">
+            <p class="state-text">Ada panggilan</p>
+            <div class="orders"></div>
+          </div>
+          <div class="no-customer">
+            <p class="state-text">Menunggu panggilan...</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              shape-rendering="geometricPrecision"
+              text-rendering="geometricPrecision"
+              image-rendering="optimizeQuality"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              viewBox="0 0 469 511.83"
+            >
+              <path
+                fill-rule="nonzero"
+                d="M321.07 456.77c.82-.39 1.65-.72 2.5-.98.79-.59 1.63-1.11 2.52-1.58 9.62-4.94 18.81-10.59 27.51-17.02 4.77-3.53 11.02-4.47 16.6-2.41 13.16 4.76 15.67 22.45 4.46 30.75a235.796 235.796 0 0 1-32.47 20.1c-1.07.55-2.17.97-3.27 1.28-.73.53-1.52 1-2.34 1.41l-.23.11.02.03c-58.28 28.14-122.45 29.99-179.1 10.24-56.65-19.76-105.76-61.12-133.9-119.39-28.14-58.28-29.99-122.45-10.24-179.1C32.88 143.56 74.25 94.45 132.52 66.3c20.37-9.83 41.47-16.46 62.73-20.08 17.92-3.05 35.95-3.96 53.73-2.84L239 33.97c-7.91-7.44-8.29-19.88-.85-27.78 7.44-7.91 19.88-8.29 27.78-.85l39.9 37.61c1.55 1.46 2.8 3.1 3.77 4.86 5.59 7.91 4.59 18.94-2.71 25.69l-40.24 37.25c-7.95 7.35-20.35 6.87-27.71-1.08-7.35-7.95-6.87-20.35 1.08-27.7l3.85-3.57c-14.2-.68-28.56.15-42.83 2.58-18.01 3.06-35.91 8.69-53.21 17.04-49.53 23.92-84.68 65.65-101.46 113.77-16.79 48.13-15.2 102.67 8.72 152.21 23.92 49.53 65.65 84.68 113.77 101.46 26.62 9.29 55.21 12.95 83.83 10.32a20.3 20.3 0 0 1 2-.35c3.29-.35 6.56-.8 9.83-1.3.83-.12 1.67-.19 2.49-.2 18.31-3.04 36.49-8.71 54.05-17.19l.01.03zM196.86 182.24c0-10.03 8.13-18.16 18.16-18.16s18.16 8.13 18.16 18.16v110.52l75.64 33.25c9.17 4.04 13.33 14.74 9.3 23.9-4.04 9.17-14.74 13.33-23.91 9.29l-85.58-37.61c-6.87-2.59-11.77-9.22-11.77-17.01V182.24zM398.65 390.9c-4.04 5.92-4.21 13.31-.48 19.42 6.77 10.72 22.22 11.15 29.48.73 7.32-10.65 13.58-21.37 19.14-33.04 6.16-13.08-5.13-27.62-19.35-24.87-5.57 1.15-10.11 4.62-12.56 9.77-4.71 9.89-10.03 18.97-16.23 27.99zm33.83-89.98c-1.65 15.74 16.47 25.54 28.76 15.56 3.62-3.03 5.8-7.01 6.34-11.71 1.41-12.66 1.76-25.4 1.09-38.11-.76-14.57-17.99-21.96-29.08-12.49-4.2 3.57-6.46 8.87-6.17 14.37.55 10.83.27 21.6-.94 32.38zm-12.61-95.64c5.76 14.64 26.4 15 32.65.54 1.83-4.29 1.93-9.06.22-13.41a233.5 233.5 0 0 0-16.64-34.27c-6.06-10.15-19.9-11.67-28.07-3.11-5.4 5.83-6.31 14.18-2.33 21.06 5.5 9.36 10.24 19.07 14.17 29.19zm-55.55-78.75c12.22 10.38 30.7.67 29.07-15.31-.51-4.52-2.6-8.45-6.02-11.44-9.69-8.33-19.91-15.81-30.81-22.48-12.92-7.88-29.15 3.13-26.6 18.06.93 5.07 3.77 9.37 8.19 12.07 9.29 5.71 17.9 11.98 26.17 19.1z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="service-closed">
+          <p class="state-text">Bengkel Anda masih tutup</p>
+          <button class="btn btn-open-bengkel">Buka sekarang</button>
+          <p class="closed-desc">
+            Bengkel Anda masih terlihat tutup oleh pelanggan. <br />
+            Aktifkan sekarang agar dapat dilihat oleh semua pelanggan
+          </p>
+        </div>
+      </div>
+      <div class="montir-availability">
+        <p class="montir-availability-header">Ketersediaan Montir</p>
+        <div class="no-montir">
+          <p>Tidak ada montir yang aktif</p>
+        </div>
+        <div class="montirs">
+          <!-- <div class="montir">
+				<p class="montir-name">Joko</p>
+				<div class="montir-toggle">
+					<input type="checkbox" id="switch-1" class="checkbox" checked />
+					<label for="switch-1" class="toggle"></label>
+				</div>
+			</div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==== PHOTO REGISTRATION SECTION === -->
+    <section class="container photo-regis">
+      <h2>Silakan unggah foto bengkel Anda</h2>
+      <form>
+        <output id="result-signup"></output>
+        <p class="input-error-text">Mohon tambahkan foto bengkel</p>
+        <div>
+          <button class="btn input-pic">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill="none"
+                stroke-width="2"
+                d="M1,1 L19,1 L19,19 L1,19 L1,1 Z M5,19 L5,23 L23,23 L23,5.97061363 L18.9998921,5.97061363 M6,8 C6.55228475,8 7,7.55228475 7,7 C7,6.44771525 6.55228475,6 6,6 C5.44771525,6 5,6.44771525 5,7 C5,7.55228475 5.44771525,8 6,8 Z M2,18 L7,12 L10,15 L14,10 L19,16"
+              />
+            </svg>
+            Tambahkan foto
+          </button>
+          <input
+            type="file"
+            name="files"
+            id="files-signup"
+            multiple="multiple"
+            accept="image/jpeg, image/png, image/jpg"
+            style="visibility: hidden"
+          />
+        </div>
+        <p class="helper-text-pics">Tambahkan maksimal 3 foto bengkel</p>
+        <button class="btn btn-lanjut btn-submit-form">Unggah Foto</button>
+        <button class="btn btn-load" style="display: none">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+      </form>
+    </section>
+
+    <!-- ==== SUCCESS ORDER SECTION === -->
+    <section class="container success-order">
+      <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <h2>Panggilan Sukses</h2>
+      <p class="no-orders">Anda belum memiliki panggilan</p>
+      <div class="success-orders">
+        <!-- <div class="card order">
+          <div>
+            <p class="order-date">2/10/2022</p>
+            <p class="order-name">Puan Marahmarahni</p>
+          </div>
+          <button class="btn btn-order-detail">Lihat detail</button>
+        </div>
+        <div class="card order">
+          <div>
+            <p class="order-date">2/10/2022</p>
+            <p class="order-name">Puan Marahmarahni</p>
+          </div>
+          <button class="btn btn-order-detail">Lihat detail</button>
+        </div> -->
+      </div>
+      <div class="card open-success-order">
+        <svg
+          class="close-icon"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g data-name="Layer 2">
+            <g data-name="close">
+              <rect transform="rotate(180 12 12)" opacity="0" />
+              <path
+                d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
+              />
+            </g>
+          </g>
+        </svg>
+        <p class="order-date">2/10/2022</p>
+        <p class="order-montir">Montir : Idzan Aufar</p>
+        <p class="order-name">Pelanggan : Puan Marahmarahni</p>
+        <div>
+          <p>Ulasan :</p>
+          <div class="rating-stars"></div>
+          <p class="review-text">"Montir cepat dan ramah"</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==== ON PROGRESS ORDER SECTION === -->
+    <section class="container order-on-progress">
+      <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <h2>Panggilan Diproses</h2>
+      <p class="no-orders">Tidak ada panggilan yang sedang dilayani</p>
+      <div class="card on-progress-orders"></div>
+    </section>
+
+    <!-- ==== EDIT BENGKEL SECTION === -->
+    <section class="container bengkel-edit-profil">
+      <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <h2>Ubah Profil Bengkel</h2>
+      <p>Masukkan data diri kamu dengan benar untuk mengubah profil bengkel.</p>
+      <form>
+        <p class="column-header">Data Pemilik Bengkel</p>
+        <input type="hidden" name="role" value="bengkel" />
+        <div class="form-column">
+          <label for="phone-number"
+            >Nomor HP <br />(Whatsapp)<span>*</span></label
+          >
+          <p class="added-text">+62</p>
+          <input type="number" name="phone-number" id="phone-number" />
+        </div>
+        <div class="form-column">
+          <label for="owner-name">Nama Pemilik<span>*</span></label>
+          <input type="text" name="owner-name" id="owner-name" />
+        </div>
+        <br />
+        <p class="column-header">Data Bengkel</p>
+        <div class="form-column">
+          <label for="bengkel-name">Nama Bengkel<span>*</span></label>
+          <input type="text" name="bengkel-name" id="bengkel-name" />
+        </div>
+        <div class="form-column">
+          <label for="bengkel-address">Alamat Bengkel<span>*</span></label>
+          <input type="text" name="bengkel-address" id="bengkel-address" />
+        </div>
+        <div class="form-column deskripsi">
+          <label for="bengkel-description"
+            >Deskripsi Bengkel<span>*</span></label
+          >
+          <textarea
+            id="bengkel-description"
+            name="bengkel-description"
+            rows="5"
+            cols="33"
+          ></textarea>
+          <p class="helper-text">
+            Perhatian : Deskripsi berisi tentang Bengkel dan layanan apa saja
+            yang ada pada Bengkel Anda
+          </p>
+        </div>
+        <div class="form-column">
+          <label>Waktu Buka<span>*</span></label>
+          <input type="time" name="open-time" />
+          sampai
+          <input type="time" name="close-time" />
+        </div>
+        <div class="form-column">
+          <label>Foto Bengkel</label>
+        </div>
+        <output id="result-edit"></output>
+        <div>
+          <button class="btn input-pic">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill="none"
+                stroke-width="2"
+                d="M1,1 L19,1 L19,19 L1,19 L1,1 Z M5,19 L5,23 L23,23 L23,5.97061363 L18.9998921,5.97061363 M6,8 C6.55228475,8 7,7.55228475 7,7 C7,6.44771525 6.55228475,6 6,6 C5.44771525,6 5,6.44771525 5,7 C5,7.55228475 5.44771525,8 6,8 Z M2,18 L7,12 L10,15 L14,10 L19,16"
+              />
+            </svg>
+            Tambahkan foto
+          </button>
+          <input
+            type="file"
+            name="files"
+            id="files-edit"
+            multiple="multiple"
+            accept="image/jpeg, image/png, image/jpg"
+            style="visibility: hidden"
+          />
+        </div>
+        <p class="helper-text-pics">Tambahkan maksimal 3 foto bengkel</p>
+        <p class="input-error-text">Semua kolom wajib diisi!</p>
+        <button
+          class="btn btn-lanjut btn-submit-form"
+          id="btn-update-profil"
+          style="display: block"
+        >
+          Selanjutnya
+        </button>
+        <button class="btn btn-load" style="display: none">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+      </form>
+    </section>
+
+    <!-- ==== SEND COST SECTION === -->
+    <section class="container send-cost">
+      <h2>Permintaan perhitungan biaya</h2>
+      <div class="requests"></div>
+    </section>
+
+    <!-- ==== SETTING MONTIR SECTION === -->
+    <section class="container setting-montir">
+      <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <h2>Pengaturan Montir</h2>
+      <!--  -->
+      <svg class="trash-template" xmlns="http://www.w3.org/2000/svg">
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 465.311 465.311"
+          style="enable-background: new 0 0 465.311 465.311"
+          xml:space="preserve"
+          id="trash"
+        >
+          <path
+            d="M372.811,51.002h-59.908V36.566C312.902,16.404,296.499,0,276.335,0h-87.356c-20.163,0-36.567,16.404-36.567,36.566v14.436
+		  H92.5c-20.726,0-37.587,16.861-37.587,37.587v38.91c0,8.284,6.716,15,15,15h7.728v307.812c0,8.284,6.716,15,15,15H372.67
+		  c8.284,0,15-6.716,15-15V142.499h7.728c8.284,0,15-6.716,15-15v-38.91C410.397,67.863,393.536,51.002,372.811,51.002z
+		  M182.412,36.566c0-3.621,2.946-6.566,6.567-6.566h87.356c3.621,0,6.567,2.946,6.567,6.566v14.436h-100.49V36.566z M84.914,88.589
+		  c0-4.184,3.403-7.587,7.587-7.587h280.31c4.184,0,7.587,3.403,7.587,7.587v23.91H84.914V88.589z M357.67,435.311H107.641V142.499
+			  H357.67V435.311z"
+          />
+          <path
+            d="M137.41,413.485c5.523,0,10-4.477,10-10V166.497c0-5.523-4.477-10-10-10s-10,4.477-10,10v236.988
+			  C127.41,409.008,131.887,413.485,137.41,413.485z"
+          />
+          <path
+            d="M200.907,413.485c5.523,0,10-4.477,10-10V166.497c0-5.523-4.477-10-10-10s-10,4.477-10,10v236.988
+			  C190.907,409.008,195.384,413.485,200.907,413.485z"
+          />
+          <path
+            d="M264.404,413.485c5.523,0,10-4.477,10-10V166.497c0-5.523-4.477-10-10-10s-10,4.477-10,10v236.988
+			  C254.404,409.008,258.881,413.485,264.404,413.485z"
+          />
+          <path
+            d="M327.901,413.485c5.523,0,10-4.477,10-10V166.497c0-5.523-4.477-10-10-10s-10,4.477-10,10v236.988
+			  C317.901,409.008,322.378,413.485,327.901,413.485z"
+          />
+        </symbol>
+      </svg>
+      <!--  -->
+      <div class="no-montir">
+        <p>Tidak ada montir yang aktif</p>
+      </div>
+      <div class="montirs">
+        <!-- <div class="montir">
+				<p class="montir-name">Prabowo Subiantowagapat</p>
+				<button class="btn btn-delete-montir">
+					<svg viewBox="0 0 32 32">
+						<use href="#trash"></use>
+					</svg>
+					Hapus
+				</button>
+			</div> -->
+      </div>
+      <button class="btn btn-add-montir">Tambah Montir</button>
+    </section>
+
+    <!-- Add Montir Section -->
+    <section class="container add-montir">
+      <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <h2>Isi form tambah montir</h2>
+      <form class="add-montir-form">
+        <div class="form-column">
+          <label for="phone-number">Nomor HP <span>*</span></label>
+          <p class="added-text">+62</p>
+          <input
+            type="number"
+            name="phone-number"
+            id="phone-number"
+            placeholder="899 9105 6652"
+          />
+        </div>
+        <div class="form-column">
+          <label for="montir-name">Nama Montir <span>*</span></label>
+          <input
+            type="text"
+            name="montir-name"
+            id="montir-name"
+            placeholder="Sudirman"
+          />
+        </div>
+        <p class="input-error-text">Semua kolom wajib diisi!</p>
+        <button class="btn btn-lanjut btn-submit-form" id="btn-add-montir">
+          Lanjut
+        </button>
+        <button class="btn btn-load" style="display: none">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+      </form>
+    </section>
+
+    <!-- Order Notification Section -->
+    <section class="order-notification">
+      <div id="map-order-notification" class="map"></div>
+      <div class="container card order-info">
+        <button class="btn-section-back">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+        </button>
+        <div>
+          <p class="order-distance">5 menit (5km)</p>
+          <div class="cust-info">
+            <p class="name">Puan Marahmarahni</p>
+            <p class="contact">
+              <a aria-label="Chat on WhatsApp" class="btn-wa" href="">
+                <img
+                  alt="Chat on WhatsApp"
+                  src="./src/images/WhatsAppButtonGreenSmall.png"
+              /></a>
+            </p>
+          </div>
+          <div class="problem">
+            <p class="problem-head">Masalah yang dialami :</p>
+            <p class="problem-desc">"Ban depan bocor, gabisa jalan"</p>
+          </div>
+        </div>
+        <div class="order-notif-buttons">
+          <button class="btn btn-accept-order">Terima panggilan</button>
+          <button class="btn btn-reject-order">Tolak panggilan</button>
+        </div>
+      </div>
+      <div class="card select-montir">
+        <p class="select-montir-heading">Silakan pilih montir :</p>
+        <form>
+          <div class="no-montir">
+            <p>Tidak ada montir yang aktif</p>
+          </div>
+          <div class="montirs"></div>
+          <p class="input-error-text">Montir belum dipilih!</p>
+          <button class="btn btn-submit-form btn-select-montir">Pilih</button>
+          <button class="btn btn-load" style="display: none">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </button>
+        </form>
+      </div>
+      <div class="card reject-order-confirm">
+        <p>Apakah Anda yakin ingin menolak pesanan?</p>
+        <div class="reject-order-buttons">
+          <button class="btn btn-yes">Ya, saya yakin</button>
+          <button class="btn btn-no">Batal</button>
+        </div>
+      </div>
+      <!-- ==== WAITING CARD === -->
+      <div class="card waiting-card">
+        <p>Menunggu keberangkatan montir..</p>
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="card confirm-card">
+        <p>Montir telah berangkat</p>
+        <button class="btn btn-yes">Oke</button>
+      </div>
+    </section>
+
+    <!-- ==== [MONTIR SECTION] === -->
+    <!-- Montir Main Section -->
+    <section class="container main-montir">
+      <div class="montir-profile">
+        <div class="montir-name">Idzan Aufar</div>
+        <div class="montir-number">+6281291056652</div>
+        <button class="btn btn-install-app not-active">
+          <?xml version="1.0" encoding="utf-8"?>
+
+          <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+          <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+          <svg
+            height="800px"
+            width="800px"
+            version="1.1"
+            id="_x32_"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+          >
+            <g>
+              <path
+                class="st0"
+                d="M426.537,0H179.641c-22.243,0-40.376,18.175-40.376,40.401v129.603h25.221V69.106h277.206V424.46H164.485
+					  v-83.887h-25.221v131.034c0,22.192,18.133,40.392,40.376,40.392h246.896c22.192,0,40.375-18.2,40.375-40.392v-129.03V40.401
+					  C466.912,18.175,448.728,0,426.537,0z M303.08,478.495c-9.174,0-16.636-7.47-16.636-16.661c0-9.183,7.462-16.653,16.636-16.653
+					  c9.158,0,16.686,7.47,16.686,16.653C319.766,471.025,312.247,478.495,303.08,478.495z"
+              />
+              <polygon
+                class="st0"
+                points="225.739,335.774 358.778,255.289 225.739,174.804 225.739,221.11 45.088,221.11 45.088,289.468 
+					  225.739,289.468 	"
+              />
+            </g></svg
+          >Install aplikasi
+        </button>
+        <button class="btn btn-logout">Keluar</button>
+      </div>
+      <div class="montir-job">
+        <p class="job-text">Menunggu perintah...</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          shape-rendering="geometricPrecision"
+          text-rendering="geometricPrecision"
+          image-rendering="optimizeQuality"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          viewBox="0 0 469 511.83"
+        >
+          <path
+            fill-rule="nonzero"
+            d="M321.07 456.77c.82-.39 1.65-.72 2.5-.98.79-.59 1.63-1.11 2.52-1.58 9.62-4.94 18.81-10.59 27.51-17.02 4.77-3.53 11.02-4.47 16.6-2.41 13.16 4.76 15.67 22.45 4.46 30.75a235.796 235.796 0 0 1-32.47 20.1c-1.07.55-2.17.97-3.27 1.28-.73.53-1.52 1-2.34 1.41l-.23.11.02.03c-58.28 28.14-122.45 29.99-179.1 10.24-56.65-19.76-105.76-61.12-133.9-119.39-28.14-58.28-29.99-122.45-10.24-179.1C32.88 143.56 74.25 94.45 132.52 66.3c20.37-9.83 41.47-16.46 62.73-20.08 17.92-3.05 35.95-3.96 53.73-2.84L239 33.97c-7.91-7.44-8.29-19.88-.85-27.78 7.44-7.91 19.88-8.29 27.78-.85l39.9 37.61c1.55 1.46 2.8 3.1 3.77 4.86 5.59 7.91 4.59 18.94-2.71 25.69l-40.24 37.25c-7.95 7.35-20.35 6.87-27.71-1.08-7.35-7.95-6.87-20.35 1.08-27.7l3.85-3.57c-14.2-.68-28.56.15-42.83 2.58-18.01 3.06-35.91 8.69-53.21 17.04-49.53 23.92-84.68 65.65-101.46 113.77-16.79 48.13-15.2 102.67 8.72 152.21 23.92 49.53 65.65 84.68 113.77 101.46 26.62 9.29 55.21 12.95 83.83 10.32a20.3 20.3 0 0 1 2-.35c3.29-.35 6.56-.8 9.83-1.3.83-.12 1.67-.19 2.49-.2 18.31-3.04 36.49-8.71 54.05-17.19l.01.03zM196.86 182.24c0-10.03 8.13-18.16 18.16-18.16s18.16 8.13 18.16 18.16v110.52l75.64 33.25c9.17 4.04 13.33 14.74 9.3 23.9-4.04 9.17-14.74 13.33-23.91 9.29l-85.58-37.61c-6.87-2.59-11.77-9.22-11.77-17.01V182.24zM398.65 390.9c-4.04 5.92-4.21 13.31-.48 19.42 6.77 10.72 22.22 11.15 29.48.73 7.32-10.65 13.58-21.37 19.14-33.04 6.16-13.08-5.13-27.62-19.35-24.87-5.57 1.15-10.11 4.62-12.56 9.77-4.71 9.89-10.03 18.97-16.23 27.99zm33.83-89.98c-1.65 15.74 16.47 25.54 28.76 15.56 3.62-3.03 5.8-7.01 6.34-11.71 1.41-12.66 1.76-25.4 1.09-38.11-.76-14.57-17.99-21.96-29.08-12.49-4.2 3.57-6.46 8.87-6.17 14.37.55 10.83.27 21.6-.94 32.38zm-12.61-95.64c5.76 14.64 26.4 15 32.65.54 1.83-4.29 1.93-9.06.22-13.41a233.5 233.5 0 0 0-16.64-34.27c-6.06-10.15-19.9-11.67-28.07-3.11-5.4 5.83-6.31 14.18-2.33 21.06 5.5 9.36 10.24 19.07 14.17 29.19zm-55.55-78.75c12.22 10.38 30.7.67 29.07-15.31-.51-4.52-2.6-8.45-6.02-11.44-9.69-8.33-19.91-15.81-30.81-22.48-12.92-7.88-29.15 3.13-26.6 18.06.93 5.07 3.77 9.37 8.19 12.07 9.29 5.71 17.9 11.98 26.17 19.1z"
+          />
+        </svg>
+      </div>
+      <div class="card requesting-cost">
+        <form>
+          <h2>Formulir pengecekan masalah motor</h2>
+          <p>
+            Deskripsi akan dikirim kepada pihak bengkel untuk dilakukan
+            perhitungan biaya perbaikan
+          </p>
+          <textarea
+            id="problem-description"
+            name="problem-description"
+            rows="5"
+            cols="33"
+            placeholder="Masalah apa saja yang ditemukan setelah pengecekan? Tuliskan secara detail"
+          ></textarea>
+          <button class="btn btn-submit-form">Kirim</button>
+          <button class="btn btn-load" style="display: none">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Montir Order Information Section -->
+    <section class="montir-order-information">
+      <div id="map-montir-order-info" class="map"></div>
+      <div class="container card order-info">
+        <div>
+          <p class="order-distance">5 menit (5km)</p>
+          <div class="cust-info">
+            <p class="name">Puan Marahmarahni</p>
+            <p class="contact">
+              <a aria-label="Chat on WhatsApp" class="btn-wa" href="">
+                <img
+                  alt="Chat on WhatsApp"
+                  src="./src/images/WhatsAppButtonGreenSmall.png"
+              /></a>
+            </p>
+          </div>
+          <div class="problem">
+            <p class="problem-head">Masalah yang dialami :</p>
+            <p class="problem-desc">
+              "Ban depan bocor, gabisa jalan Lorem ipsum dolor sit, amet
+              consectetur adipisicing elit. Distinctio amet quidem repellat
+              quibusdam deleniti odio, dicta ducimus voluptas corporis,
+              blanditiis ipsa quaerat repudiandae quo? Eos labore aspernatur
+              consequatur impedit veritatis? "
+            </p>
+          </div>
+        </div>
+        <button class="btn btn-yes btn-submit-form">Berangkat</button>
+        <button class="btn btn-load" style="display: none">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Montir OTW Section -->
+    <section class="montir-otw">
+      <div id="map-montir-otw" class="map"></div>
+      <div class="card you-arrived">
+        <p class="heading">Selamat kamu sudah sampai!</p>
+        <img src="./src/images/green-check.png" alt="check-icon" />
+        <button class="btn btn-yes">Oke</button>
+      </div>
+      <div class="container card otw-info">
+        <p class="countdown-text">Anda akan sampai 5 menit lagi</p>
+        <div class="arrive-confirm">
+          <p>Apakah Anda sudah bertemu dengan pelanggan?</p>
+          <button class="btn btn-arrive-confirm btn-submit-form">Sudah</button>
+          <button class="btn btn-load" style="display: none">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Montir Edit Profile Section -->
+    <section class="container montir-edit-profile">
+      <button class="btn-section-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <h2>Ubah Profil</h2>
+      <p>Masukkan data diri kamu dengan benar untuk mengubah profil.</p>
+      <form>
+        <input type="hidden" name="role" value="montir" />
+        <div class="form-column">
+          <label for="phone-number"
+            >Nomor HP <br />(Whatsapp)<span>*</span></label
+          >
+          <p class="added-text">+62</p>
+          <input type="number" name="phone-number" id="phone-number" />
+        </div>
+        <div class="form-column">
+          <label for="montir-name">Nama <span>*</span></label>
+          <input type="text" name="montir-name" id="montir-name" />
+        </div>
+        <button class="btn btn-lanjut btn-submit-form" id="btn-update-profil">
+          Selanjutnya
+        </button>
+        <button class="btn btn-load" style="display: none">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+      </form>
+    </section>
+  </body>
+</html>

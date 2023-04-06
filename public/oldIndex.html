@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AGUSTUS SELESAI</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <script src="./bundle.js" defer></script>
+  </head>
+  <body>
+    <!-- WELCOME - AUTH PAGE -->
+    <!-- <div class="welcome-page container">
+        <div class="welcoming-word">
+            <h1>GASKEN</h1>
+        </div>
+        <div class="auth-options">
+            <button class="btn">Masuk</button>
+            <button class="btn">Belum punya akun? Daftar dulu yuk!</button>
+            <a href="" role="button" class="btn btn-login">Masuk</a>
+            <a href="" role="button" class="btn btn-signup">Belum punya akun? Daftar dulu yuk!</a>
+        </div>
+    </div> -->
+
+    <!-- AUTH MODALS -->
+    <!-- <div class="auth-login auth-page container">
+        <button class="btn-auth-back">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+        </button>
+        <h2>Masukkan nomor HP</h2>
+        <p>Kami akan mengirim kode lewat SMS ke nomormu supaya kamu bisa masuk ke akunmu.</p>
+        <form class="input-number">
+            <label for="phone-number">Nomor HP <span>*</span></label>
+            <input type="number" name="phone-number" id="phone-number" placeholder="0812345678">
+            <a href="" role="button" class="btn">Kirim SMS</a>
+        </form>
+    </div>
+    <div class="auth-signup auth-page container">
+        <button class="btn-auth-back">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+        </button>
+        <h2>Daftar akun bengkel</h2>
+        <p>Silakan isi form dengan benar supaya kamu bisa langsung pakai akun barumu!</p>
+        <form class="input-bengkel">
+            <label for="bengkel-phone-number">Nomor HP <span>*</span></label>
+            <input type="number" name="bengkel-phone-number" id="bengkel-phone-number" placeholder="0812345678">
+            <label for="nama-bengkel">Nama Bengkel <span>*</span></label>
+            <input type="text" name="nama-bengkel" id="nama-bengkel" placeholder="Bengkel Jaya">
+            <label for="nama-pemilik-bengkel">Nama Pemilik Bengkel <span>*</span></label>
+            <input type="text" name="nama-pemilik-bengkel" id="nama-pemilik-bengkel" placeholder="Arya Mahesa">
+            <label for="layanan-bengkel">Layanan  Bengkel <span>*</span></label>
+            <input type="text" name="layanan-bengkel" id="layanan-bengkel" placeholder="0812345678">
+            <a href="" role="button" class="btn">LANJUT</a>
+        </form>
+    </div>
+    <div class="auth-otp auth-page container">
+        <button class="btn-header-back">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+        </button>
+        <h2>Masukkan kode OTP</h2>
+        <p>Masukkan kode OTP yang kami SMS ke nomor HP-mu 081234567899.</p>
+        <form class="input-number">
+            <label for="otp-number">kode OTP <span>*</span></label>
+            <input type="number" name="otp-number" id="otp-number" placeholder=". . . .">
+            <a href="" role="button" class="btn">LANJUT</a>
+        </form>
+    </div> -->
+    <!-- hei -->
+    <div class="auth">
+      <div class="modal active">
+        <h2>Login</h2>
+        <form class="login">
+          <input type="email" name="email" placeholder="email" />
+          <input type="password" name="password" placeholder="password" />
+          <button class="btn btn-login">Login</button>
+          <p class="error"></p>
+        </form>
+        <div>No account? <a href="" class="switch">Register instead</a></div>
+      </div>
+      <div class="modal">
+        <h2>Register</h2>
+        <form class="register">
+          <input type="text" name="fullname" placeholder="fullname" />
+          <input type="email" name="email" placeholder="email" />
+          <input type="password" name="password" placeholder="password" />
+          <button class="btn btn-regis">Register</button>
+          <p class="error"></p>
+        </form>
+        <div>Got an account? <a href="" class="switch">Login instead</a></div>
+      </div>
+    </div>
+
+    <!-- MAIN PAGE -->
+    <div class="main">
+      <div id="map"></div>
+      <div class="map-header">
+        <div class="logo logo-a">
+          <img src="src/images/mapbox-icon.png" alt="" srcset="" />
+        </div>
+        <p>Pilih Bengkel</p>
+        <div class="logo logo-b"><img src="#" alt="" srcset="" /></div>
+      </div>
+      <p class="waitingText active">Mencari lokasi Anda...</p>
+
+      <div class="card info-card">
+        <div class="info-nav">
+          <svg
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="96.000000pt"
+            height="96.000000pt"
+            viewBox="0 0 96.000000 96.000000"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <g
+              transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
+              fill="#000000"
+              stroke="none"
+            >
+              <path
+                d="M140 560 c-23 -23 -26 -59 -7 -82 6 -9 81 -61 164 -117 110 -73 161
+                    -101 183 -101 22 0 73 28 183 101 83 56 158 108 165 117 30 39 -3 102 -53 102
+                    -15 0 -79 -36 -160 -90 l-135 -90 -135 90 c-141 95 -170 105 -205 70z"
+              />
+            </g>
+          </svg>
+        </div>
+        <div class="bengkel-dynamic-info">
+          <!-- <div class="info-header">
+                    <p class="info-name">Bengkel Pakde Leo</p>
+                    <div class="status"></div>
+                </div> -->
+          <!-- <div class="bengkel-images">
+                    <div class="bengkel-image">
+                        <img src="../src/images/bengkel_1.jpg" alt="" srcset="">
+                    </div>
+                    <div class="bengkel-image">
+                        <img src="../src/images/bengkel_2.jpg" alt="" srcset="">
+                    </div>
+                    <div class="bengkel-image">
+                        <img src="../src/images/bengkel_3.jpg" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="services">
+                    <div class="service">
+                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                            width="96.000000pt" height="96.000000pt" viewBox="0 0 96.000000 96.000000"
+                            preserveAspectRatio="xMidYMid meet">
+                            <g transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
+                            stroke="none">
+                            <path d="M386 870 c-63 -16 -153 -70 -197 -117 -22 -24 -55 -74 -72 -111 -29
+                            -61 -32 -76 -32 -163 0 -90 2 -99 37 -171 45 -90 104 -148 191 -188 72 -33
+                            137 -47 137 -29 0 6 9 23 20 39 l20 27 -52 7 c-56 8 -128 41 -175 80 -16 14
+                            -45 53 -64 88 -31 58 -34 70 -33 148 0 69 5 94 24 135 115 237 450 246 567 15
+                            18 -36 35 -76 37 -91 4 -15 21 -35 47 -52 l42 -28 -6 63 c-20 191 -182 344
+                            -375 354 -42 2 -94 -1 -116 -6z"/>
+                            <path d="M440 607 l0 -113 -70 -69 c-38 -38 -70 -74 -70 -80 0 -12 36 -45 48
+                            -45 4 0 44 37 90 83 l82 82 0 128 0 127 -40 0 -40 0 0 -113z"/>
+                            <path d="M691 426 c-87 -48 -50 -186 49 -186 51 0 100 49 100 99 0 75 -83 124
+                            -149 87z"/>
+                            <path d="M646 149 c-48 -12 -103 -44 -116 -69 -6 -10 -10 -32 -10 -49 l0 -31
+                            220 0 220 0 0 35 c0 42 -31 78 -87 102 -46 19 -174 26 -227 12z"/>
+                            </g>
+                        </svg>
+                        <p class="waktu-kerja"><span>Buka</span> . Tutup pukul 20.00</p>
+                    </div>
+                    <div class="service">
+                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                            width="96.000000pt" height="96.000000pt" viewBox="0 0 96.000000 96.000000"
+                            preserveAspectRatio="xMidYMid meet">
+                            <g transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
+                            stroke="none">
+                            <path d="M437 914 c-4 -4 -7 -17 -7 -29 0 -36 -25 -51 -55 -31 -33 22 -48 20
+                            -75 -9 -23 -25 -23 -25 -5 -59 21 -39 18 -46 -28 -62 -27 -9 -32 -16 -35 -49
+                            -4 -41 8 -55 46 -55 30 0 38 -24 18 -55 -22 -33 -20 -48 7 -73 28 -27 32 -27
+                            66 -3 33 24 51 15 60 -30 7 -33 9 -34 51 -34 44 0 45 1 48 33 4 42 24 50 68
+                            26 l34 -19 27 28 28 27 -19 34 c-24 44 -16 64 26 68 32 3 33 4 33 48 0 43 -1
+                            45 -37 53 -42 10 -46 22 -21 66 17 29 17 30 -6 55 -28 30 -47 33 -72 10 -25
+                            -22 -47 -11 -57 28 -7 30 -12 33 -48 36 -22 2 -43 0 -47 -4z m89 -187 c54 -46
+                            23 -130 -47 -130 -33 0 -79 39 -79 68 0 26 22 63 44 73 33 17 53 14 82 -11z"/>
+                            <path d="M136 382 c-49 -21 -91 -43 -93 -49 -4 -11 81 -210 96 -226 4 -4 28 4
+                            53 18 l46 25 113 -56 c153 -75 153 -75 350 52 190 122 221 148 217 183 -5 46
+                            -45 39 -144 -25 -49 -31 -103 -73 -121 -93 l-31 -36 -119 1 c-123 1 -173 12
+                            -173 40 0 13 6 15 28 10 15 -4 72 -9 128 -13 113 -6 144 3 144 42 0 32 -35 55
+                            -85 55 -65 0 -106 17 -152 62 -40 39 -47 42 -105 45 -55 3 -75 -2 -152 -35z"/>
+                            <path d="M571 386 l-54 -33 39 -5 c31 -4 50 1 92 26 28 17 52 34 52 38 0 21
+                            -79 5 -129 -26z"/>
+                            <path d="M755 390 c-12 -4 -42 -21 -67 -37 -40 -25 -44 -31 -33 -46 7 -9 16
+                            -17 20 -17 13 0 135 81 135 90 0 6 -27 22 -33 19 -1 0 -11 -4 -22 -9z"/>
+                            </g>
+                        </svg>
+                        <ul>
+                            <li>Tambal ban</li>
+                            <li>Ganti oli</li>
+                            <li>Strum accu</li>
+                            <li>Kelistrikan</li>
+                        </ul>
+                    </div>
+                    <div class="service">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                        </svg>
+                        <p>0812 9105 6652</p>
+                    </div>
+                </div> -->
+        </div>
+        <button class="btn btn-rute">
+          <svg
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="96.000000pt"
+            height="96.000000pt"
+            viewBox="0 0 96.000000 96.000000"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <g
+              transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
+              stroke="none"
+            >
+              <path
+                d="M263 697 c-112 -111 -203 -209 -203 -217 0 -19 401 -420 420 -420 19
+                    0 420 401 420 420 0 19 -401 420 -420 420 -8 0 -106 -91 -217 -203z m380 -200
+                    l-48 -48 -3 30 -3 31 -66 0 c-92 0 -103 -11 -103 -110 0 -87 -16 -123 -47
+                    -104 -27 16 -31 155 -6 203 29 56 62 73 147 79 l76 5 0 30 0 31 50 -49 50 -49
+                    -47 -49z"
+              />
+            </g>
+          </svg>
+          Lihat Rute
+        </button>
+      </div>
+      <button class="btn btn-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
+      <div class="card route-card">
+        <div class="pricing">
+          <p>Jarak : <span>1000m</span></p>
+          <p>Harga : <span>Rp20,000</span></p>
+          <!-- <div><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>Rp 20.000
+                </div> -->
+        </div>
+        <div class="route-buttons">
+          <!-- <button class="btn btn-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+              />
+            </svg>
+            Mulai
+          </button> -->
+          <button class="btn btn-order">
+            <div>
+              <p>Panggil Teknisi</p>
+              <br />
+              <span>Kamu tinggal nunggu!</span>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <button class="btn btn-logout">Logout</button>
+    </div>
+  </body>
+</html>

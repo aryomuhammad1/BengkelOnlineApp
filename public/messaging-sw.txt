@@ -1,0 +1,89 @@
+// // // FIREBASE INIT
+// // // console.log('INI DARI DB.JS')
+// import { initializeApp } from "firebase/app";
+// import { getMessaging } from "firebase/messaging";
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+import { getMessaging } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-messaging.js";
+// import { messaging } from "./src/js/firebase-config";
+// importScripts("https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js");
+// importScripts("https://www.gstatic.com/firebasejs/9.9.4/firebase-messaging.js");
+
+const version = "v4";
+
+self.addEventListener("install", () => {
+  console.log("ServiceWorker installed!");
+});
+
+self.addEventListener("activate", () => {
+  console.log("ServiceWorker Activated !");
+
+  const firebaseApp = initializeApp({
+    apiKey: "AIzaSyA51anpLkYPlxlhJj7HR-vG1JVOkAJZSHA",
+    authDomain: "aplikasi-bengkel-online.firebaseapp.com",
+    projectId: "aplikasi-bengkel-online",
+    storageBucket: "aplikasi-bengkel-online.appspot.com",
+    messagingSenderId: "721522428619",
+    appId: "1:721522428619:web:5360c606488d277182694e",
+    measurementId: "G-01H5MHX8H2",
+  });
+  console.log("firebaseApp sw : ", firebaseApp);
+
+  const messaging = getMessaging(firebaseApp);
+  console.log("messaging : ", messaging);
+});
+
+// const firebaseApp = initializeApp({
+//   apiKey: "AIzaSyA51anpLkYPlxlhJj7HR-vG1JVOkAJZSHA",
+//   authDomain: "aplikasi-bengkel-online.firebaseapp.com",
+//   projectId: "aplikasi-bengkel-online",
+//   storageBucket: "aplikasi-bengkel-online.appspot.com",
+//   messagingSenderId: "721522428619",
+//   appId: "1:721522428619:web:5360c606488d277182694e",
+//   measurementId: "G-01H5MHX8H2",
+// });
+// const messaging = getMessaging(firebaseApp);
+// console.log("messaging : ", messaging);
+// console.log("firebaesApp : ", firebaseApp);
+// messaging.onBackgroundMessage((payload) => {
+//   console.log(
+//     "[firebase-messaging-sw.js] Received bakcground message",
+//     payload
+//   );
+//   const notificationTitle = "Background Message Title";
+//   const notificationOptions = {
+//     body: "Background Message Body",
+//   };
+
+//   navigator.serviceWorker.ready
+//     .then((registration) => {
+//       registration.showNotification(notificationTitle, notificationOptions);
+//     })
+//     .catch((err) => console.log("showNotif Error : ", err.message));
+// });
+
+// // import { messaging } from "./src/js/firebase-config";
+// import { initializeApp } from "firebase/app";
+// import { getMessaging } from "firebase/messaging";
+
+// const firebaseApp = initializeApp({
+//   messagingSenderId: "721522428619",
+// });
+
+// const messaging = getMessaging(firebaseApp);
+// messaging.onBackgroundMessage((payload) => {
+//   console.log(
+//     "[firebase-messaging-sw.js] Received bakcground message",
+//     payload
+//   );
+//   const notificationTitle = "Background Message Title";
+//   const notificationOptions = {
+//     body: "Background Message Body",
+//   };
+
+//   navigator.serviceWorker.ready
+//     .then((registration) => {
+//       registration.showNotification(notificationTitle, notificationOptions);
+//     })
+//     .catch((err) => console.log("showNotif Error : ", err.message));
+// });
